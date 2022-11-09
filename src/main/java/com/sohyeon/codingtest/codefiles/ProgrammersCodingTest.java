@@ -11,56 +11,59 @@ public class ProgrammersCodingTest {
     }
 
     class 프로그래머스_난이도0_다음에올숫자 {
+
         class Solution {
             public int solution(int[] common) {
 
                 int answer = 0;
 
                 //등차
-                boolean isArithmeticSequence = false;
-                int arithmeticSequence = 0;
-
+                int arithmeticSequence;
                 //등비
-                boolean isGeometricSequence = false;
-                int geometricSequence = 0;
+                int geometricSequence;
 
-                //1. 등차,등비 구분하고 공비,공차 구하기
-
-                //[1, 3, 5]인 경우 -> 공비가0인건 없으니까 common[0] = 1인 경우는 다 등차!
-                if(common[0] == 1) {
-                    isArithmeticSequence = true;
+                if(common[1] - common[0] == common[2] - common[1]) {
+                    //등차
                     arithmeticSequence = common[2] - common[1];
+                    answer = common[common.length - 1] + arithmeticSequence;
+                } else {
+                    //등비
+                    geometricSequence = common[1]/common[0];
+                    answer = common[common.length - 1] * geometricSequence;
                 }
 
-                if(common[0] != 1) {
-                    if(common[1] - common[0] == common[2] - common[1]) {
-                        //등차
-                        isArithmeticSequence = true;
-                        arithmeticSequence = common[2] - common[1];
-                    } else {
-                        //등비
-                        isGeometricSequence = true;
-                        geometricSequence = common[1]/common[0];
+                return answer;
+            }
+        }
+    }
+
+    class 프로그래머스_난이도0_연속된수의합 {
+        class Solution {
+            public int[] solution(int num, int total) {
+                //num = 1 ~ 100
+                //total = 0 ~ 1000
+                //num수 만큼 더해서 total값이 되는 answer나오게하기
+                int[] answer = {}; //정수배열, 오름차순
+
+                int tmpTotal = 0;
+                //12 -> 될 수 있는 경우의 수 따져서
+                //total만큼 1부터 1,2,3(num개수만큼) ->x [i = 1]
+                //2,3,4 ->x [i = 2]
+                //3,4,5 ->o [i = 3] => 찾으면 answer에 .add하고 종료 return false;
+
+                //금 5번은 어카지
+                //total만큼 1부터 1,2,3,4,5(num개수만큼) -> num다 안했는데 total넘어버리면 i에서 -1더하도록?
+
+                //3   [1,2,3]
+                for(int i = 1; i <= num; i++) { //1,2,3
+                    tmpTotal += i; //1+2+3 =
+//                    answer.add(i);
+
+                    //total = 12
+                    if(tmpTotal == total) { //딱 일치하는 경우
+                        return answer;
                     }
                 }
-
-                //2. 등차,등비 구했으니까 등차인경우, 등비인경우 나눠서 해보자
-
-
-                //등차인 경우
-                if(isArithmeticSequence) {
-                    answer = common[common.length - 1] + arithmeticSequence;
-                }
-
-                //등비인 경우
-                if(isGeometricSequence) {
-                    // Math.pow(5, 2);
-                    System.out.println(geometricSequence);
-                    // answer = (int)Math.pow(common[0], common[common.length]);
-                    answer = common[common.length - 1] * geometricSequence;
-                    System.out.println(answer);
-                }
-
                 return answer;
             }
         }
