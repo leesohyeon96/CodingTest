@@ -51,7 +51,7 @@ public class ProgrammersCodingTest {
                 //2,3,4 ->x [i = 2]
                 //3,4,5 ->o [i = 3] => 찾으면 answer에 .add하고 종료 return false;
 
-                //금 5번은 어카지(잔디체크)
+                //금 5번은 어카지(잔디체크2)
                 //total만큼 1부터 1,2,3,4,5(num개수만큼) -> num다 안했는데 total넘어버리면 i에서 -1더하도록?
 
                 //3   [1,2,3]
