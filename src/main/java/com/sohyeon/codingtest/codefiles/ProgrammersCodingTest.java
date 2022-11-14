@@ -39,31 +39,58 @@ public class ProgrammersCodingTest {
 
     class 프로그래머스_난이도0_연속된수의합 {
         class Solution {
-            public int[] solution(int num, int total) {
+            public int[] solution(int num, int total) { //둘다 정수
                 //num = 1 ~ 100
                 //total = 0 ~ 1000
                 //num수 만큼 더해서 total값이 되는 answer나오게하기
                 int[] answer = {}; //정수배열, 오름차순
 
                 int tmpTotal = 0;
-                //12 -> 될 수 있는 경우의 수 따져서
-                //total만큼 1부터 1,2,3(num개수만큼) ->x [i = 1]
-                //2,3,4 ->x [i = 2]
-                //3,4,5 ->o [i = 3] => 찾으면 answer에 .add하고 종료 return false;
 
-                //금 5번은 어카지(잔디체크2)
-                //total만큼 1부터 1,2,3,4,5(num개수만큼) -> num다 안했는데 total넘어버리면 i에서 -1더하도록?
+                //3
+                for(int i = 1; i <= num; i++) {
+                    for(int j = i; j <= i + num; j++) {
+                        tmpTotal += j;
+                    }
+                    System.out.println("tmpTotal : " + tmpTotal);
 
-                //3   [1,2,3]
-                for(int i = 1; i <= num; i++) { //1,2,3
-                    tmpTotal += i; //1+2+3 =
-//                    answer.add(i);
+                    if(tmpTotal != total || tmpTotal < total) { //맞지않는 경우
+                        tmpTotal = 0; //초기화
+                    }
+
+                    if(tmpTotal == total) { //딱 일치하는 경우
+                        System.out.println("?");
+                        System.out.println(tmpTotal);
+                    }
+
+                    if(tmpTotal > total) { //넘는 경우
+                        for(int j = 1; i <= num; j++) {
+                            i--;
+                        }
+                        System.out.println(tmpTotal);
+                    }
+
+
+                    //1+2+3 =
+                    //tmpTotal < total
+                    //tmpTotal == total
+                    // tmpTotal > total
+                    //경우 다 따져서 미리 넘어버리면 i--
 
                     //total = 12
-                    if(tmpTotal == total) { //딱 일치하는 경우
-                        return answer;
-                    }
                 }
+
+
+
+
+
+
+
+
+
+
+
+
                 return answer;
             }
         }
