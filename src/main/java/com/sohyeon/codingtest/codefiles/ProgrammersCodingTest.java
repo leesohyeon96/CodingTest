@@ -39,57 +39,19 @@ public class ProgrammersCodingTest {
 
     class 프로그래머스_난이도0_연속된수의합 {
         class Solution {
-            public int[] solution(int num, int total) { //둘다 정수
-                //num = 1 ~ 100
-                //total = 0 ~ 1000
-                //num수 만큼 더해서 total값이 되는 answer나오게하기
-                int[] answer = {}; //정수배열, 오름차순
+            public int[] solution(int num, int total) {
+                int[] answer = new int[num];
 
-                int tmpTotal = 0;
+                //생각해보기(원리)
+                int sum = num * (num + 1) / 2;
+                int offset = (total - sum) / num;
 
-                //3
+                System.out.println("sum" + sum);
+                System.out.println("offset" + offset);
+
                 for(int i = 1; i <= num; i++) {
-                    for(int j = i; j <= i + num; j++) {
-                        tmpTotal += j;
-                    }
-                    System.out.println("tmpTotal : " + tmpTotal);
-
-                    if(tmpTotal != total || tmpTotal < total) { //맞지않는 경우
-                        tmpTotal = 0; //초기화
-                    }
-
-                    if(tmpTotal == total) { //딱 일치하는 경우
-                        System.out.println("?");
-                        System.out.println(tmpTotal);
-                    }
-
-                    if(tmpTotal > total) { //넘는 경우
-                        for(int j = 1; i <= num; j++) {
-                            i--;
-                        }
-                        System.out.println(tmpTotal);
-                    }
-
-
-                    //1+2+3 =
-                    //tmpTotal < total
-                    //tmpTotal == total
-                    // tmpTotal > total
-                    //경우 다 따져서 미리 넘어버리면 i--
-
-                    //total = 12
+                    answer[i - 1] = (i + offset);
                 }
-
-
-
-
-
-
-
-
-
-
-
 
                 return answer;
             }
