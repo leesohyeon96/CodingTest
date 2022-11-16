@@ -37,7 +37,8 @@ public class ProgrammersCodingTest {
         }
     }
 
-    class 프로그래머스_난이도0_연속된수의합 {
+    //TODO 투포인터 알고리즘 공부해보기 + 나중에 다시 풀어보기..
+    class 프로그래머스_난이도0_연속된수의합 { 
         class Solution {
             public int[] solution(int num, int total) {
                 int[] answer = new int[num];
@@ -52,6 +53,17 @@ public class ProgrammersCodingTest {
                 for(int i = 1; i <= num; i++) {
                     answer[i - 1] = (i + offset);
                 }
+
+                return answer;
+            }
+        }
+    }
+
+    class 프로그래머스_난이도0_몫구하기 {
+        class Solution {
+            public int solution(int num1, int num2) {
+                int answer = 0;
+                answer = num1 / num2;
 
                 return answer;
             }
