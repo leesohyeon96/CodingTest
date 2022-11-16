@@ -1,7 +1,6 @@
 package com.sohyeon.codingtest.codefiles;
-import java.lang.Math;
 
-public class ProgrammersCodingTest {
+public class ProgrammersCodingTest_level_0 {
 
     //전역설정때문에 저렇게 올라가는데 다시 바꿔서 해야겠다 어휴,,
 
@@ -70,5 +69,85 @@ public class ProgrammersCodingTest {
         }
     }
 
+    class 프로그래머스_난이도0_두수의곱 {
+        class Solution {
+            public int solution(int num1, int num2) {
+                int answer = 0;
+                answer = num1 * num2;
+
+                return answer;
+            }
+        }
+    }
+
+    class 프로그래머스_난이도0_숫자비교하기 {
+        class Solution {
+            public int solution(int num1, int num2) {
+                int answer = 0;
+
+                answer = num1 == num2? 1: -1;
+
+                return answer;
+            }
+        }
+    }
+
+    class 프로그래머스_난이도0_나머지구하기 {
+        class Solution {
+            public int solution(int num1, int num2) {
+                int answer = num1 % num2;
+
+                return answer;
+            }
+        }
+    }
+
+    class 프로그래머스_난이도0_두수의차 {
+        class Solution {
+            public int solution(int num1, int num2) {
+                int answer = num1 - num2;
+
+                return answer;
+            }
+        }
+    }
+
+    class 프로그래머스_난이도0_나이출력 {
+        class Solution {
+            public int solution(int age) {
+                int answer = 0;
+
+                if(0 < age && age <= 120) {
+                    answer = 2022 - age + 1;
+                }
+
+                return answer;
+            }
+        }
+    }
+
+    class 프로그래머스_난이도0_두수의합 {
+        class Solution {
+            public int solution(int num1, int num2) {
+
+                int answer = -1;
+
+                if((-50000 <= num1 && num1 <= 50000) && (-50000 <= num2 && num2 <= 50000)) {
+                    answer = num1 + num2;
+                }
+
+                return answer;
+            }
+        }
+    }
+
+    class 프로그래머스_난이도0_각도기 {
+        class Solution {
+            public int solution(int angle) {
+                int answer = 0;
+                return answer;
+            }
+        }
+    }
 
 }
