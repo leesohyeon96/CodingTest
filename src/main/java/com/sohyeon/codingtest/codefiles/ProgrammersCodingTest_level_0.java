@@ -145,9 +145,50 @@ public class ProgrammersCodingTest_level_0 {
         class Solution {
             public int solution(int angle) {
                 int answer = 0;
+                // 0 < 예각 < 90
+                // 90 < 둔각 < 180
+                // 평각 = 180
+
+                if (angle <= 90) {
+                    answer = (angle < 90) ? 1 : 2;
+                } else {
+                    answer = (angle == 180) ? 4 : 3;
+                }
+
+
                 return answer;
             }
         }
     }
 
+    class 프로그래머스_난이도0_두수의나눗셈 {
+        class Solution {
+            public int solution(int num1, int num2) {
+                int answer = 0;
+                double result = (double)num1 / (double)num2;
+
+                if((0 < num1 && num1 <= 100) && (0 < num2 && num2 <= 100)) {
+                    answer = (int)(result * 1000);
+                }
+
+                return answer;
+            }
+        }
+    }
+
+    class 프로그래머스_난이도0_짝수의합 {
+        class Solution {
+            public int solution(int n) {
+                int answer = 0;
+
+                if((0 < n && n <= 1000) && n%2 == 0) {
+                    //n은 짝수만 들올거
+
+                }
+
+
+                return answer;
+            }
+        }
+    }
 }
