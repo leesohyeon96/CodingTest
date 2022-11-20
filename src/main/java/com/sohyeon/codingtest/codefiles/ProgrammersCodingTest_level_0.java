@@ -181,11 +181,114 @@ public class ProgrammersCodingTest_level_0 {
             public int solution(int n) {
                 int answer = 0;
 
-                if((0 < n && n <= 1000) && n%2 == 0) {
-                    //n은 짝수만 들올거
+                if(0 < n && n <= 1000) {
+                    for(int i = 0; i <= n; i++) {
+                        answer += (i%2 == 0)? i: 0;
+                    }
+                }
+                return answer;
+            }
+        }
+    }
 
+    class 프로그래머스_난이도0_양꼬치 {
+        class Solution {
+            public int solution(int n, int k) {
+                int answer = 0;
+                int nTotalPrice = 0;
+                int kTotalPrice = 0;
+
+                if((0 < n && n < 1000) && (n/10 <= k && k < 1000)) {
+
+                    if(n >= 10) {
+                        kTotalPrice = (k >= 2)? (k - (n/10)) * 2000: 0; //10인분마다 1개씩 k++;
+                        nTotalPrice = n * 12000;
+
+                    } else {
+                        kTotalPrice = k * 2000;
+                        nTotalPrice = n * 12000;
+                    }
+                    answer = kTotalPrice + nTotalPrice;
                 }
 
+                return answer;
+            }
+            
+            /*
+
+            <객체 지향적 풀이 - 참고>
+
+            class Solution {
+                public int solution(int n, int k) {
+                    int lambTotalPrice = totalPrice(Menu.LAMB, n);
+                    int drinkTotalPrice = totalPrice(Menu.DRINK, k);
+                    int discountPrice = discount(Menu.DRINK, n);
+
+                    int totalPay = lambTotalPrice + drinkTotalPrice - discountPrice;
+                    return totalPay;
+                }
+
+                private int totalPrice(Menu menu, int quantity) {
+                    return menu.getPrice() * quantity;
+                }
+
+                private int discount(Menu menu, int lambQuantity) {
+                    // 양꼬치 10인분에 음료수 하나
+                    int point = lambQuantity / 10;
+
+                    return menu.getPrice() * point;
+                }
+            }
+
+            enum Menu {
+
+                LAMB("양꼬치", 12000),
+                DRINK("음료수", 2000);
+
+                private final String name;
+                private final int price;
+
+                Menu(String name, int price) {
+                    this.name = name;
+                    this.price = price;
+                }
+
+                public String getName() {
+                    return name;
+                }
+
+                public int getPrice() {
+                    return price;
+                }
+            }
+
+            */
+
+        }
+    }
+
+    class 프로그래머스_난이도0_배열의평균값 {
+        class Solution {
+            public double solution(int[] numbers) {
+                double answer = 0;
+                double tempTotal = 0;
+                boolean isLimit = false;
+
+                for(int i = 0;  i < numbers.length; i++) {
+                    if((numbers[i] >= 0 && numbers[i] <= 1000) &&
+                            (numbers.length >= 1 && numbers.length <= 100)) {
+
+                        isLimit = true;
+                    }
+                }
+
+                if(isLimit) {
+                    for(int j = 0; j < numbers.length; j++) {
+                        tempTotal += numbers[j];
+                    }
+
+                    answer = tempTotal / numbers.length;
+                }
 
                 return answer;
             }
