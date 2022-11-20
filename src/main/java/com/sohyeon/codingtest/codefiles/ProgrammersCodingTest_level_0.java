@@ -294,4 +294,77 @@ public class ProgrammersCodingTest_level_0 {
             }
         }
     }
+
+    class 프로그래머스_난이도0_머쓱이보다키큰애들 {
+        class Solution {
+            public int solution(int[] array, int height) {
+                int answer = 0;
+                boolean isWithinRange = false;
+
+                for(int i = 0; i < array.length; i++) {
+                    if((array.length >= 1 && array.length <= 100)
+                            && (height >= 1 && height <= 200)
+                            && (array[i] >= 1 && array[i] <= 200)) {
+                        isWithinRange = true;
+                    }
+                }
+
+                if(isWithinRange) {
+                    for(int i = 0; i < array.length; i++) {
+                        if(array[i] > height) {
+                            answer++;
+                        }
+                    }
+                }
+
+                return answer;
+            }
+        }
+    }
+
+    class 프로그래머스_난이도0_중복된숫자개수 {
+        class Solution {
+            public int solution(int[] array, int n) {
+                int answer = 0;
+                boolean isWithinRange = false;
+
+                for(int i = 0; i < array.length; i++) {
+                    if((array[i] >= 0 && array[i] <= 1000) &&
+                            (array.length >= 1 && array.length <= 100) &&
+                            (0 <= n && n <= 1000)) {
+                        isWithinRange = true;
+                    }
+                }
+
+                if(isWithinRange) {
+                    for(int i = 0; i < array.length; i++) {
+                        if(n == array[i]) {
+                            answer++;
+                        }
+                    }
+                }
+
+                return answer;
+            }
+        }
+    }
+
+    class 프로그래머스_난이도0_피자나눠먹기1 {
+        class Solution {
+            public int solution(int n) {
+                int answer = 0;
+
+                if(n >= 1 && n <= 100) {
+                    answer = ((n - 1) / 7) + 1;
+                }
+
+                return answer;
+            }
+        }
+    }
+
+    class 프로그래머스_난이도0_피자나눠먹기3 {
+        //푸는중
+    }
+
 }
