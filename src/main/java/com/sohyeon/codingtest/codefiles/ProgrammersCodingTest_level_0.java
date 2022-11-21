@@ -364,7 +364,55 @@ public class ProgrammersCodingTest_level_0 {
     }
 
     class 프로그래머스_난이도0_피자나눠먹기3 {
-        //푸는중
+        class Solution {
+            public int solution(int slice, int n) {
+                int answer = 0;
+
+                if((slice >= 2 && slice <= 10)
+                        && (n >= 1 && n <= 100)) {
+                    answer = (n%slice == 0)? n/slice: n/slice + 1;
+
+                }
+
+                return answer;
+            }
+        }
+    }
+
+    class 프로그래머스_난이도0_문자열뒤집기 {
+
+    /*
+        이렇게 StringBuilder사용하면 간편히도 가능..wow
+
+        StringBuilder sb = new StringBuilder();
+        sb.append(my_string);
+        sb.reverse();
+        return sb.toString();
+    */
+        class Solution {
+            public String solution(String my_string) {
+                String answer = "";
+
+                if(my_string.length() >= 1 && my_string.length() <= 1000) {
+
+                    char[] my_string_char = my_string.toCharArray();
+                    char[] temp_char_list = new char[my_string_char.length];
+
+                    for(int i = my_string_char.length - 1; i >= 0; i--) {
+                        temp_char_list[my_string_char.length - (i + 1)] = my_string_char[i];
+                    }
+
+                    answer = String.valueOf(temp_char_list);
+
+                }
+
+                return answer;
+            }
+        }
+    }
+
+    class 프로그래머스_난이도0_배열뒤집기 {
+        
     }
 
 }
