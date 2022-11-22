@@ -416,13 +416,38 @@ public class ProgrammersCodingTest_level_0 {
             public int[] solution(int[] num_list) {
                 int[] answer = new int[num_list.length];
 
-                for(int i = num_list.length - 1; i >= 0; i--) {
+                for (int i = num_list.length - 1; i >= 0; i--) {
                     answer[(num_list.length - 1) - i] = num_list[i];
                 }
 
 
                 return answer;
             }
+        }
+    }
+
+    class 프로그래머스_난이도0_짝수홀수개수 {
+        class Solution {
+            public int[] solution(int[] num_list) {
+                int numListLength = num_list.length;
+                int[] answer = new int[2];
+                int evenNm = 0;
+                int oddNm = 0;
+
+                for(int i = 0; i < numListLength; i++) {
+                    if(num_list[i]%2 == 0) {
+                        evenNm++;
+                    } else {
+                        oddNm++;
+                    }
+                }
+
+                answer[0] = evenNm;
+                answer[1] = oddNm;
+
+                return answer;
+            }
+        }
     }
 
 }
