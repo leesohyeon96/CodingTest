@@ -450,4 +450,68 @@ public class ProgrammersCodingTest_level_0 {
         }
     }
 
+    class 프로그래머스_난이도0_삼각형의완성조건1 {
+//        import java.util.Arrays;
+
+        class Solution {
+            public int solution(int[] sides) {
+                int answer = 0;
+                int theOtherValue = 0;
+
+//                Arrays.sort(sides);
+
+                for(int i = 0; i < sides.length - 1; i++) {
+                    theOtherValue += sides[i];
+                }
+
+                for(int i : sides) {
+                    answer = (sides[sides.length - 1] < theOtherValue) ? 1 : 2;
+                }
+
+                return answer;
+            }
+        }
+    }
+
+    class 프로그래머스_난이도0_최댓값만들기1 {
+//        import java.util.Arrays;
+
+        class Solution {
+            public int solution(int[] numbers) {
+                int answer = 0;
+//                Arrays.sort(numbers);
+
+                answer = numbers[numbers.length - 1] * numbers[numbers.length - 2];
+
+                return answer;
+            }
+        }
+    }
+
+    class 프로그래머스_난이도0_배열자르기 {
+//        import java.util.ArrayList;
+//      import java.util.Arrays;
+//      import java.util.List;
+
+        class Solution {
+            public int[] solution(int[] numbers, int num1, int num2) {
+                int[] answer = {};
+                // int[] tsst = {};
+                // int[] array = new [num2];
+//                List tmpArray = new ArrayList(num2);
+
+                for(int i = 0; i < numbers.length; i++) {
+                    if(i >= num1 && i <= num2) {
+//                        tmpArray.add(numbers[i]);
+                    }
+                }
+
+//                for(int i : (tmpArray) {
+//                        answer[i] = tmpArray.get(i);
+//        }
+
+                return answer;
+            }
+        }
+    }
 }
