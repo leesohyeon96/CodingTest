@@ -503,4 +503,18 @@ public class ProgrammersCodingTest_level_0 {
             }
         }
     }
+
+    class 프로그래머스_난이도0_점의위치구하기 {
+        class Solution {
+            public int solution(int[] dot) {
+                int answer = 0;
+
+                answer = (dot[0] > 0 && dot[1] > 0) ? 1: (dot[0] < 0 && dot[1] > 0) ? 2 :
+                        (dot[0] < 0 && dot[1] < 0) ? 3 : 4;
+
+                return answer;
+            }
+        }
+    }
+
 }
