@@ -489,28 +489,17 @@ public class ProgrammersCodingTest_level_0 {
     }
 
     class 프로그래머스_난이도0_배열자르기 {
-//        import java.util.ArrayList;
 //      import java.util.Arrays;
-//      import java.util.List;
 
         class Solution {
             public int[] solution(int[] numbers, int num1, int num2) {
+
                 int[] answer = {};
-                // int[] tsst = {};
-                // int[] array = new [num2];
-//                List tmpArray = new ArrayList(num2);
 
-                for(int i = 0; i < numbers.length; i++) {
-                    if(i >= num1 && i <= num2) {
-//                        tmpArray.add(numbers[i]);
-                    }
-                }
-
-//                for(int i : (tmpArray) {
-//                        answer[i] = tmpArray.get(i);
-//        }
+//                answer = Arrays.copyOfRange(numbers, num1, num2 + 1);
 
                 return answer;
+
             }
         }
     }
