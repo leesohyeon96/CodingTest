@@ -586,4 +586,21 @@ public class ProgrammersCodingTest_level_0 {
 
     }
 
+    class 프로그래머스_난이도0_배열두배만들기 {
+        class Solution {
+            public int[] solution(int[] numbers) {
+                int[] answer = new int[numbers.length];
+
+                if(numbers.length >= 1 && numbers.length <= 1000) {
+                    for(int i = 0; i < numbers.length; i++) {
+                        answer[i] = numbers[i] * 2;
+                    }
+                }
+
+                return answer;
+            }
+        }
+
+    }
+
 }
