@@ -517,4 +517,73 @@ public class ProgrammersCodingTest_level_0 {
         }
     }
 
+    class 프로그래머스_난이도0_편지 {
+        class Solution {
+            public int solution(String message) {
+                int answer = 0;
+
+                //1글자 = 가로2cm
+                if(message.length() >= 1 && message.length() <= 50) {
+                    answer = message.length() * 2;
+                }
+
+
+                return answer;
+            }
+        }
+    }
+
+    class 프로그래머스_난이도0_배열원소의길이 {
+
+        /*
+            풀이 참고
+            return Arrays.stream(strList).mapToInt(String::length).toArray();
+        */
+        class Solution {
+            public int[] solution(String[] strlist) {
+                int[] answer = new int[strlist.length];
+
+                if(strlist.length >= 1 && strlist.length <= 100) {
+                    for(int i = 0; i < strlist.length; i++) {
+                        answer[i] = strlist[i].lastIndexOf("") - strlist[i].indexOf("");
+                    }
+                }
+
+                return answer;
+            }
+        }
+
+    }
+
+    class 프로그래머스_난이도0_아이스아메리카노 {
+        class Solution {
+            public int[] solution(int money) {
+                int[] answer = new int[2];
+
+                if(money > 0 && money <= 1000000) {
+                    answer[0] = (money < 5500) ? 0: (money/5500);
+
+                    answer[1] = money - (answer[0] * 5500);
+                }
+
+                return answer;
+            }
+        }
+    }
+
+    class 프로그래머스_난이도0_특정문자제거하기 {
+        class Solution {
+            public String solution(String my_string, String letter) {
+                String answer = "";
+
+                if(my_string.length() >= 1 && my_string.length() <= 100) {
+                    answer = my_string.replaceAll(letter, "");
+                }
+
+                return answer;
+            }
+        }
+
+    }
+
 }
