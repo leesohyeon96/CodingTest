@@ -633,4 +633,139 @@ public class ProgrammersCodingTest_level_0 {
         }
     }
 
+    class 프로그래머스_난이도0_짝수는싫어요 {
+
+//import java.util.ArrayList;
+//import java.util.List;
+        class Solution {
+            public int[] solution(int n) {
+
+                int anonymousNum = (n%2 == 0)? n/2: (n/2) + 1;
+                int[] answer = new int[anonymousNum];
+//                List<Integer> test = new ArrayList<>();
+
+                if(n >= 1 && n <= 100) {
+                    for(int i = 1; i <= n; i++) {
+                        if(i%2 == 1) {
+//                            test.add(i);
+                        }
+                    }
+
+                    for(int i = 0; i < answer.length; i++) {
+//                        answer[i] = test.get(i);
+                    }
+                }
+
+                return answer;
+            }
+        }
+
+        class 프로그래머스_난이도0_배열의유사도 {
+            class Solution {
+                public int solution(String[] s1, String[] s2) {
+                    int answer = 0;
+
+                    for(int i = 0; i < s1.length; i++) {
+                        for(int j = 0; j < s2.length; j++) {
+                            if(s1[i].equals(s2[j])) {
+                                answer++;
+                            }
+                        }
+                    }
+
+                    return answer;
+                }
+            }
+        }
+
+        class 프로그래머스_난이도0_제곱수판별하기 {
+
+            /* 참고
+
+            if (n % Math.sqrt(n) == 0) {
+                return 1;
+            } else {
+                return 2;
+            }
+
+            */
+            class Solution {
+                public int solution(int n) {
+                    double tmpDb = Math.sqrt(n);
+                    String str = String.format("%.1f", tmpDb);
+
+                    String afterDotNum = str.substring(str.indexOf(".") + 1);
+
+                    int answer = (afterDotNum.equals("0"))? 1: 2;
+
+                    return answer;
+                }
+            }
+
+        }
+
+        class 프로그래머스_난이도0_문자열안에문자열 {
+            class Solution {
+                public int solution(String str1, String str2) {
+
+                    int answer = 0;
+
+                    answer = (str1.indexOf(str2) != -1)? 1: 2;
+
+                    return answer;
+                }
+            }
+
+        }
+
+        class 프로그래머스_난이도0_옷가게할인받기 {
+            class Solution {
+                public int solution(int price) {
+                    int answer = 0;
+
+                    if(price >= 10 && price <= 1000000) {
+
+                        answer = (price < 100000)? price:
+                                (price >= 100000 && price < 300000)? price - (int)(Math.round(price * 0.05)):
+                                        (price >= 300000 && price < 500000)? price - (int)(Math.round(price * 0.1)):
+                                                price - (int)(Math.round(price * 0.2));
+
+                    }
+
+                    return answer;
+                }
+            }
+
+        }
+
+        class 프로그래머스_난이도0_자릿수더하기 {
+
+            /* 참고
+
+            while(n>0){
+                answer+=n%10;
+                n/=10;
+            }
+
+            return answer;
+
+            */
+
+//            import java.util.stream.Stream;
+            class Solution {
+                public int solution(int n) {
+                    int answer = 0;
+
+//                    int[] intArray = Stream.of(String.valueOf(n).split("")).mapToInt(Integer::parseInt).toArray();
+
+//                    for(int i : intArray) {
+//                        answer += i;
+//                    }
+
+                    return answer;
+                }
+            }
+        }
+    }
+
 }
