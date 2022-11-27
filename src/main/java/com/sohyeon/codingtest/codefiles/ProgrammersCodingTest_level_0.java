@@ -602,5 +602,35 @@ public class ProgrammersCodingTest_level_0 {
         }
 
     }
+    
+    class 프로그래머스_난이도0_문자반복출력하기 {
+        class Solution {
+            public String solution(String my_string, int n) {
+                String answer = "";
+                char[] ch = my_string.toCharArray();
+                String[] strArray = new String[my_string.length()];
+
+                if((my_string.length() >= 2 && my_string.length() <= 5)
+                        && (n >= 2 && n <= 10)) {
+                    for(int i = 0; i < ch.length; i++) {
+                        String str = "";
+
+                        for(int j = 0; j < n; j++) {
+                            str += ch[i];
+                        }
+                        strArray[i] = str;
+
+                    }
+
+                    for(int i = 0; i < strArray.length; i++) {
+                        answer += strArray[i];
+                    }
+
+                }
+
+                return answer;
+            }
+        }
+    }
 
 }
