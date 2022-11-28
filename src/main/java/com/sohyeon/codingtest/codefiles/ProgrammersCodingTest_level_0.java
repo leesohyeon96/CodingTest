@@ -779,6 +779,27 @@ public class ProgrammersCodingTest_level_0 {
                 }
             }
         }
+
+        class 프로그래머스_난이도0_순서쌍의개수 {
+
+            /* 참고
+                import java.util.stream.IntStream;
+            *  return (int) IntStream.rangeClosed(1, n).filter(i -> n % i == 0).count();
+            * */
+            class Solution {
+                public int solution(int n) {
+                    int answer = 0;
+
+                    for(int i = 1; i <= n; i++) {
+                        if(n%i == 0) {
+                            answer++;
+                        }
+                    }
+
+                    return answer;
+                }
+            }
+        }
     }
 
 }
