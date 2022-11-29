@@ -800,6 +800,24 @@ public class ProgrammersCodingTest_level_0 {
                 }
             }
         }
+
+        class 프로그래머스_난이도0_숨어있는숫자의덧셈1 {
+            class Solution {
+                public int solution(String my_string) {
+                    int answer = 0;
+
+                    char[] chArray = my_string.toCharArray();
+
+                    for(int i = 0; i < chArray.length; i++) {
+                        if(chArray[i] >= 48 && chArray[i] <= 57) {
+                            answer += Integer.parseInt(String.valueOf(chArray[i]));
+                        }
+                    }
+
+                    return answer;
+                }
+            }
+        }
     }
 
 }
