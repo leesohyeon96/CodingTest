@@ -818,6 +818,29 @@ public class ProgrammersCodingTest_level_0 {
                 }
             }
         }
+
+        class 프로그래머스_난이도0_모음제거 {
+//            import java.util.Arrays;
+            class Solution {
+                public String solution(String my_string) {
+                    String answer = "";
+                    String[] vowel = {"a","e","i","o","u"};
+                    StringBuilder strb = new StringBuilder();
+
+
+                    for(int i = 0; i < my_string.length(); i++) {
+                        char tmpCh = my_string.charAt(i);
+                        String tmpStr = String.valueOf(tmpCh);
+
+//                        if(!Arrays.asList(vowel).contains(tmpStr)) {
+//                            strb.append(my_string.charAt(i));
+//                        }
+                    }
+
+                    return strb.toString();
+                }
+            }
+        }
     }
 
 }
