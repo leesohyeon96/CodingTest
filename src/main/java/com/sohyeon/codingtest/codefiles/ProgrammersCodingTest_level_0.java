@@ -820,6 +820,10 @@ public class ProgrammersCodingTest_level_0 {
         }
 
         class 프로그래머스_난이도0_모음제거 {
+            /* 참고
+            * answer = my_string.replaceAll("[aeiou]", "");
+            * */
+
 //            import java.util.Arrays;
             class Solution {
                 public String solution(String my_string) {
@@ -840,6 +844,76 @@ public class ProgrammersCodingTest_level_0 {
                     return strb.toString();
                 }
             }
+        }
+
+        class 프로그래머스_난이도0_개미군단 {
+            class Solution {
+                public int solution(int hp) {
+                    int answer = 0;
+                    int tmpHp = hp;
+
+                    //for말고 while(hp > 0) 해서 반복시켰으면 좋았을 듯 하다
+                    for(int i = 1; i <= tmpHp; i++) {
+
+                        boolean isZero = (hp <= 0)? false: true;
+
+                        if(isZero) {
+                            int antKind = (hp/5 > 0)? 5: (hp/3 > 0)? 3: 1;
+
+                            switch(antKind) {
+                                case 3:
+                                    answer += hp/3;
+                                    hp -= hp/3*3;
+                                    break;
+                                case 5:
+                                    answer += hp/5;
+                                    hp -= hp/5*5;
+                                    break;
+                                case 1:
+                                    answer += hp/1;
+                                    hp -= hp/1*1;
+                                    break;
+                                default:
+                                    break;
+
+                            }
+                        }
+                    }
+
+                    return answer;
+                }
+            }
+        }
+
+        class 프로그래머스_난이도0_세균증식 {
+
+            /*
+
+            참고
+            int answer = 0;
+            answer = n << t;
+            return answer;
+            [풀이] 쉬프트 연산자(<<, >>) 
+                -> x << n 인 경우 x * 2(n제곱)의 결과와 같고 
+                -> x >> n 인 경우 x / 2(n제곱)의 결과와 같다
+                가독성이 떨어지지만 덧셈/나눗셈 연산자보다 프로그램 실행속도가 빠름
+            */
+
+            class Solution {
+                public int solution(int n, int t) {
+
+                    for(int i = 1; i <= t; i++) {
+                        n *= 2;
+                    }
+
+                    return n;
+                }
+            }
+        }
+
+        class 프로그래머스_난이도0_n의배수고르기 {
+            //푸는중
+            
         }
     }
 
