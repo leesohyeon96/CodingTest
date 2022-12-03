@@ -913,7 +913,25 @@ public class ProgrammersCodingTest_level_0 {
 
         class 프로그래머스_난이도0_n의배수고르기 {
             //푸는중
+
             
+        }
+
+        class 프로그래머스_난이도0_문자열정렬하기1 {
+            //푸는중
+            class Solution {
+                public int[] solution(String my_string) {
+                    int[] answer = {};
+
+//                    IntStream stream = my_string.chars();
+
+//                    stream.filter((ch) -> (48 <= ch && ch <= 57)).mapToObj(ch -> (char)ch)
+//                            .map(Object::toString)
+//                            .collect(Collectors.joining());
+
+                    return answer;
+                }
+            }
         }
     }
 
