@@ -914,6 +914,33 @@ public class ProgrammersCodingTest_level_0 {
         class 프로그래머스_난이도0_n의배수고르기 {
             //푸는중
 
+            class Solution {
+                public int[] solution(int n, int[] numlist) {
+
+                    //Stream으로 바꾸기
+
+                    int num = 0;
+
+                    for(int i = 0; i < numlist.length; i++) {
+                        if(numlist[i]%n == 0) {
+                            num++;
+                        }
+                    }
+                    System.out.println("?" + num);
+
+
+                    int[] answer = new int[num];
+
+                    for(int i = 0; i < numlist.length; i++) {
+                        if(numlist[i]%n == 0) {
+                            answer[i] = numlist[i];
+                        }
+                    }
+
+                    return answer;
+                }
+            }
+
             
         }
 
