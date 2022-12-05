@@ -912,20 +912,14 @@ public class ProgrammersCodingTest_level_0 {
         }
 
         class 프로그래머스_난이도0_n의배수고르기 {
-            //푸는중
-
-        //import java.util.Arrays;
-        //import java.util.List;
-        //import java.util.stream.Stream;
-
-
+        //        import java.util.Arrays;
             class Solution {
                 public int[] solution(int n, int[] numlist) {
 
                     int[] answer = {};
 
-//                    IntStream test = IntStream.range(0, numlist.length).filter(i -> i%n != 0).forEach(System.out::print);
-                    //.map(i -> numlist[i]).toArray();
+//                    answer = Arrays.stream(numlist).filter(i -> i%n == 0).toArray();
+
 
                     return answer;
                 }
