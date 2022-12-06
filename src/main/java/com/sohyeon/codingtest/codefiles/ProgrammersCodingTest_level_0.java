@@ -930,17 +930,31 @@ public class ProgrammersCodingTest_level_0 {
 
         class 프로그래머스_난이도0_문자열정렬하기1 {
             //푸는중
+//import java.util.Arrays;
+//import java.util.stream.IntStream;
+//import java.util.stream.Stream;
+
             class Solution {
                 public int[] solution(String my_string) {
                     int[] answer = {};
+                    // char[] ch = my_string.toCharArray();
+                    //String.chars() 메소드를 사용, IntStream을 땡겨와서 이걸로 문제를 해결해야함
+//                    IntStream intSt = my_string.chars();
 
-//                    IntStream stream = my_string.chars();
 
-//                    stream.filter((ch) -> (48 <= ch && ch <= 57)).mapToObj(ch -> (char)ch)
-//                            .map(Object::toString)
-//                            .collect(Collectors.joining());
+//                    String test = intSt.filter(i -> (48 <= i && i <= 57)).collect(StringBuilder::new,
+//                                    StringBuilder::appendCodePoint,
+//                                    StringBuilder::append)
+//                            .toString();
+//
+//                    answer = Stream.of(test.split("")).mapToInt(Integer::parseInt).toArray();
 
+                    System.out.println(answer.getClass().getName());
+
+                    // return Arrays.sort(answer);
                     return answer;
+
+
                 }
             }
         }
