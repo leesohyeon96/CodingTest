@@ -929,33 +929,68 @@ public class ProgrammersCodingTest_level_0 {
         }
 
         class 프로그래머스_난이도0_문자열정렬하기1 {
-            //푸는중
-//import java.util.Arrays;
-//import java.util.stream.IntStream;
-//import java.util.stream.Stream;
+
+            /* 참고
+            * import java.util.*;
+                class Solution {
+                    public int[] solution(String myString) {
+                        return Arrays.stream(myString.replaceAll("[A-Z|a-z]", "").split("")).sorted().mapToInt(Integer::parseInt).toArray();
+                    }
+                }
+            * */
+
+
+            //import java.util.Arrays;
+            //import java.util.stream.IntStream;
+            //import java.util.stream.Stream;
 
             class Solution {
                 public int[] solution(String my_string) {
                     int[] answer = {};
-                    // char[] ch = my_string.toCharArray();
-                    //String.chars() 메소드를 사용, IntStream을 땡겨와서 이걸로 문제를 해결해야함
+
 //                    IntStream intSt = my_string.chars();
 
-
-//                    String test = intSt.filter(i -> (48 <= i && i <= 57)).collect(StringBuilder::new,
+//                    String str = intSt.filter(i -> (48 <= i && i <= 57)).collect(StringBuilder::new,
 //                                    StringBuilder::appendCodePoint,
 //                                    StringBuilder::append)
 //                            .toString();
 //
-//                    answer = Stream.of(test.split("")).mapToInt(Integer::parseInt).toArray();
+//                    answer = Stream.of(str.split("")).mapToInt(Integer::parseInt).toArray();
+//
+//                    Arrays.sort(answer);
 
-                    System.out.println(answer.getClass().getName());
-
-                    // return Arrays.sort(answer);
                     return answer;
 
 
                 }
+            }
+        }
+
+        class 프로그래머스_난이도0_직삼각형출력하기 {
+
+            /* 참고
+
+            for(int i=1; i<=n; i++){
+                System.out.println("*".repeat(i));
+            }
+
+            * */
+
+
+//            import java.util.Scanner;
+
+            public class Solution {
+//                public static void main(String[] args) {
+//                    Scanner sc = new Scanner(System.in);
+//                    int n = sc.nextInt();
+
+//                    for(int i = 1; i < n+1; i++) {
+//                        for(int j = 0; j < i; j++) {
+//                            System.out.print("*");
+//                        }
+//                        System.out.println("");
+//                    }
+//                }
             }
         }
     }
