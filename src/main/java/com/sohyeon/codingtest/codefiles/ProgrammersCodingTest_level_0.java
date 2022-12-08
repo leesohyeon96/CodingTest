@@ -993,6 +993,21 @@ public class ProgrammersCodingTest_level_0 {
 //                }
             }
         }
+
+        class 프로그래머스_난이도0_주사위의개수 {
+            class Solution {
+                public int solution(int[] box, int n) {
+                    int answer = 0;
+                    // 가로,세로,높이 -> box배열에 저장
+                    // 주사위 모서리 길이 -> n
+
+                    answer = (box[0]/n) * (box[1]/n) * (box[2]/n);
+
+
+                    return answer;
+                }
+            }
+        }
     }
 
 }
