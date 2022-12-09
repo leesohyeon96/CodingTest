@@ -1008,6 +1008,35 @@ public class ProgrammersCodingTest_level_0 {
                 }
             }
         }
+
+        class 프로그래머스_난이도0_가위바위보 {
+            class Solution {
+                public String solution(String rsp) {
+
+                    char[] ch = rsp.toCharArray();
+                    char[] newCh = new char[ch.length];
+
+
+                    for(int i = 0; i < ch.length; i++) {
+
+                        if(ch[i] == '2') {
+                            newCh[i] = '0';
+                        }
+
+                        if(ch[i] == '0') {
+                            newCh[i] = '5';
+                        }
+
+                        if(ch[i] == '5') {
+                            newCh[i] = '2';
+                        }
+
+                    }
+
+                    return String.valueOf(newCh);
+                }
+            }
+        }
     }
 
 }
