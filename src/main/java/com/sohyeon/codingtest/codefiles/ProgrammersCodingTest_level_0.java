@@ -1010,6 +1010,8 @@ public class ProgrammersCodingTest_level_0 {
         }
 
         class 프로그래머스_난이도0_가위바위보 {
+            // 참고!!
+            //return Arrays.stream(rsp.split("")).map(s -> s.equals("2") ? "0" : s.equals("0") ? "5" : "2").collect(Collectors.joining());
             class Solution {
                 public String solution(String rsp) {
 
@@ -1034,6 +1036,19 @@ public class ProgrammersCodingTest_level_0 {
                     }
 
                     return String.valueOf(newCh);
+                }
+            }
+        }
+
+        class 프로그래머스_난이도0_대문자와소문자 {
+//            import java.util.*;
+
+            class Solution {
+                public String solution(String my_string) {
+
+//                    return Arrays.stream(my_string.split(""))
+//                            .filter(s -> (s >= 97 && s <= 127) ? s - 32: s + 32).collect(Collectors.joining());
+                    return "";
                 }
             }
         }
