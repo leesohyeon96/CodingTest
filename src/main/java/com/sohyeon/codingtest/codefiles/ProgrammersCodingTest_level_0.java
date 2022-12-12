@@ -1,5 +1,9 @@
 package com.sohyeon.codingtest.codefiles;
 
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
+
 public class ProgrammersCodingTest_level_0 {
 
     //전역설정때문에 저렇게 올라가는데 다시 바꿔서 해야겠다 어휴,,
@@ -1041,14 +1045,22 @@ public class ProgrammersCodingTest_level_0 {
         }
 
         class 프로그래머스_난이도0_대문자와소문자 {
-//            import java.util.*;
+
+        //참고
+        //return myString.chars().mapToObj(operand -> String.valueOf((char) (Character.isLowerCase(operand) ? Character.toUpperCase(operand) : Character.toLowerCase(operand)))).collect(Collectors.joining());
+
+        //import java.util.Arrays;
+        //import java.util.stream.*;
 
             class Solution {
                 public String solution(String my_string) {
 
-//                    return Arrays.stream(my_string.split(""))
-//                            .filter(s -> (s >= 97 && s <= 127) ? s - 32: s + 32).collect(Collectors.joining());
-                    return "";
+                    IntStream inSt = my_string.chars();
+
+                    String str = inSt.map(i -> (i >= 97 && i <= 122) ? (i - 32): (i + 32)).collect(StringBuilder::new, StringBuilder::appendCodePoint, StringBuilder::append).toString();
+
+                    return Stream.of(str.split("")).collect(Collectors.joining());
+
                 }
             }
         }
