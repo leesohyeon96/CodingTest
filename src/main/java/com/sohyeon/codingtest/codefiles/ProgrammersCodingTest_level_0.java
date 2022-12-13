@@ -1064,6 +1064,31 @@ public class ProgrammersCodingTest_level_0 {
                 }
             }
         }
+
+        class 프로그래머스_난이도0_암호해독 {
+            // TODO 나중에 Stream으로 바꾸기(어려웠음)
+            // 참고
+//            return IntStream.range(0, cipher.length())
+//                    .filter(value -> value % code == code - 1)
+//                    .mapToObj(c -> String.valueOf(cipher.charAt(c)))
+//                    .collect(Collectors.joining());
+            class Solution {
+                public String solution(String cipher, int code) {
+                    String answer = "";
+
+                    char[] cipherCh = cipher.toCharArray();
+
+                    for(int i = 0; i <= cipherCh.length; i++) {
+                        if((i != 0) && (i%code == 0)) {
+                            answer += Character.toString(cipherCh[i - 1]);
+                        }
+                    }
+
+                    return answer;
+                }
+            }
+
+        }
     }
 
 }
