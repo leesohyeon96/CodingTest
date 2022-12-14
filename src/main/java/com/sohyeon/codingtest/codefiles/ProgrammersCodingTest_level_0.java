@@ -1089,6 +1089,15 @@ public class ProgrammersCodingTest_level_0 {
             }
 
         }
+
+        class 프로그래머스_난이도0_약수구하기 {
+            class Solution {
+                public int[] solution(int n) {
+
+                    return IntStream.rangeClosed(1, n).filter(i -> n%i == 0).toArray();
+                }
+            }
+        }
     }
 
 }
