@@ -1098,6 +1098,36 @@ public class ProgrammersCodingTest_level_0 {
                 }
             }
         }
+
+        class 프로그래머스_난이도0_가장큰수찾기 {
+
+            //왜 다 실패하는거지? ㅡㅡ
+//            int[] answer = new int[2];
+//        
+//        Arrays.sort(array);
+//            int maxNum = array[array.length - 1];
+//
+//            int indexNum = IntStream.range(0, array.length)
+//                    .filter(i -> maxNum == array[i])
+//                    .findFirst()
+//                    .orElse(-1);
+//
+//            answer[0] = maxNum;
+//            answer[1] = indexNum;
+//        
+//        return answer;
+            
+//                    안됫음ㄱㄷ
+//        Arrays.sort(array);
+//            int maxNum = array[array.length - 1];
+//
+//            Integer[] copy = Arrays.stream(array).boxed().toArray(Integer[]::new);
+//
+//            int indexNum = (Arrays.asList(copy).indexOf(maxNum)) - 1;
+//
+//            answer[0] = maxNum;
+//            answer[1] = indexNum;
+        }
     }
 
 }
