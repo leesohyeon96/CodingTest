@@ -1101,32 +1101,41 @@ public class ProgrammersCodingTest_level_0 {
 
         class 프로그래머스_난이도0_가장큰수찾기 {
 
-            //왜 다 실패하는거지? ㅡㅡ
-//            int[] answer = new int[2];
-//        
-//        Arrays.sort(array);
-//            int maxNum = array[array.length - 1];
-//
-//            int indexNum = IntStream.range(0, array.length)
-//                    .filter(i -> maxNum == array[i])
-//                    .findFirst()
-//                    .orElse(-1);
-//
-//            answer[0] = maxNum;
-//            answer[1] = indexNum;
-//        
-//        return answer;
-            
-//                    안됫음ㄱㄷ
-//        Arrays.sort(array);
-//            int maxNum = array[array.length - 1];
-//
-//            Integer[] copy = Arrays.stream(array).boxed().toArray(Integer[]::new);
-//
-//            int indexNum = (Arrays.asList(copy).indexOf(maxNum)) - 1;
-//
-//            answer[0] = maxNum;
-//            answer[1] = indexNum;
+            // 참고
+            // List<Integer> list = Arrays.stream(array).boxed().collect(Collectors.toList());
+            // int max = list.stream().max(Integer::compareTo).orElse(0);
+            // int index = list.indexOf(max);
+            // return new int[] {max, index};
+            public int[] solution(int[] array) {
+
+//          이 코드는 되지만 통과 x
+//         Arrays.sort(array);
+//         int maxNum = array[array.length - 1];
+
+//         int indexNum = IntStream.range(0, array.length)
+//                 .filter(i -> maxNum == array[i])
+//                 .findFirst()
+//                 .orElse(-1);
+
+//         int[] answer = {maxNum, indexNum - 1};
+
+                int[] answer = new int[2];
+                int maxNum = 0;
+                int index = 0;
+
+                for(int i = 0; i < array.length; i++) {
+                    if( maxNum < array[i]) {
+                        maxNum = array[i];
+                        index = i;
+                    }
+                }
+
+                answer[0] = maxNum;
+                answer[1] = index;
+
+
+                return answer;
+            }
         }
     }
 
