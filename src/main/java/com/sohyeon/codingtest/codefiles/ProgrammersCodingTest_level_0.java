@@ -1137,6 +1137,41 @@ public class ProgrammersCodingTest_level_0 {
                 return answer;
             }
         }
+
+        class 프로그래머스_난이도0_배열회전시키기 {
+            class Solution {
+                public int[] solution(int[] numbers, String direction) {
+                    int[] answer = new int[numbers.length];
+
+                    //오른쪽일경우
+                    // 0 1 2 -> (2 -> 0) (1 -> 2) (0 -> 1)
+                    if(("right").equals(direction)) {
+                        for(int i = 0; i < numbers.length; i++) {
+                            if(i < numbers.length - 1) {
+                                answer[i] = numbers[i+1];
+                            }
+                            if(i == numbers.length - 1) {
+                                answer[i] = numbers[0];
+                            }
+                        }
+                    } else {
+
+                        for(int i = 0; i < numbers.length; i++) {
+                            if(i == 0) {
+                                answer[i] = numbers[numbers.length - 1];
+                            }
+                            if((i > 0) && (i <= numbers.length - 1)) {
+                                answer[i] = numbers[i-1];
+                            }
+                        }
+                        //왼쪽일 경우
+                        // 0 1 2 -> (0 -> 2) (1 -> 0) (2 -> 1)
+                    }
+
+                    return answer;
+                }
+            }
+        }
     }
 
 }
