@@ -1139,13 +1139,31 @@ public class ProgrammersCodingTest_level_0 {
         }
 
         class 프로그래머스_난이도0_배열회전시키기 {
+            // 참고
+            //            List<Integer> list = Arrays.stream(numbers).boxed().collect(Collectors.toList());
+            //
+            //        if (direction.equals("right")) {
+            //                list.add(0, list.get(list.size() - 1));
+            //                list.remove(list.size() - 1);
+            //            } else {
+            //                list.add(list.size(), list.get(0));
+            //                list.remove(0);
+            //            }
+            //        return list.stream().mapToInt(Integer::intValue).toArray();
             class Solution {
                 public int[] solution(int[] numbers, String direction) {
                     int[] answer = new int[numbers.length];
 
-                    //오른쪽일경우
-                    // 0 1 2 -> (2 -> 0) (1 -> 2) (0 -> 1)
                     if(("right").equals(direction)) {
+                        for(int i = 0; i < numbers.length; i++) {
+                            if(i == 0) {
+                                answer[i] = numbers[numbers.length - 1];
+                            }
+                            if(i > 0 && i <= numbers.length - 1) {
+                                answer[i] = numbers[i-1];
+                            }
+                        }
+                    } else {
                         for(int i = 0; i < numbers.length; i++) {
                             if(i < numbers.length - 1) {
                                 answer[i] = numbers[i+1];
@@ -1154,18 +1172,6 @@ public class ProgrammersCodingTest_level_0 {
                                 answer[i] = numbers[0];
                             }
                         }
-                    } else {
-
-                        for(int i = 0; i < numbers.length; i++) {
-                            if(i == 0) {
-                                answer[i] = numbers[numbers.length - 1];
-                            }
-                            if((i > 0) && (i <= numbers.length - 1)) {
-                                answer[i] = numbers[i-1];
-                            }
-                        }
-                        //왼쪽일 경우
-                        // 0 1 2 -> (0 -> 2) (1 -> 0) (2 -> 1)
                     }
 
                     return answer;
