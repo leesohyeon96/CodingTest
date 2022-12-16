@@ -1178,6 +1178,20 @@ public class ProgrammersCodingTest_level_0 {
                 }
             }
         }
+
+        class 프로그래머스_난이도0_숫자찾기 {
+            class Solution {
+                public int solution(int num, int k) {
+                    int answer = 0;
+
+                    int[] intArray = Stream.of(String.valueOf(num).split("")).mapToInt(Integer::parseInt).toArray();
+
+//                    answer = IntStream.range(0, intArray.length).map(i -> (intArray[i] == k)? i: -1);
+
+                    return answer;
+                }
+            }
+        }
     }
 
 }
