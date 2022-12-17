@@ -1186,7 +1186,7 @@ public class ProgrammersCodingTest_level_0 {
 
                     int[] intArray = Stream.of(String.valueOf(num).split("")).mapToInt(Integer::parseInt).toArray();
 
-//                    answer = IntStream.range(0, intArray.length).map(i -> (intArray[i] == k)? i: -1);
+                    answer = IntStream.range(0, intArray.length).filter(i-> (intArray[i] == k)).map(i -> (i+1)).findFirst().orElse(-1);
 
                     return answer;
                 }
