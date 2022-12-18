@@ -1,5 +1,6 @@
 package com.sohyeon.codingtest.codefiles;
 
+import java.util.Arrays;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -1180,6 +1181,15 @@ public class ProgrammersCodingTest_level_0 {
         }
 
         class 프로그래머스_난이도0_숫자찾기 {
+            //참고1
+            //return ("-" + num).indexOf(String.valueOf(k)); -> 와
+
+            //참고2
+            //        String numStr = String.valueOf(num);
+            //        String kStr = String.valueOf(k);
+            //
+            //        int answer = numStr.indexOf(kStr);
+            //        return answer < 0 ? -1 : answer + 1 ;
             class Solution {
                 public int solution(int num, int k) {
                     int answer = 0;
@@ -1189,6 +1199,25 @@ public class ProgrammersCodingTest_level_0 {
                     answer = IntStream.range(0, intArray.length).filter(i-> (intArray[i] == k)).map(i -> (i+1)).findFirst().orElse(-1);
 
                     return answer;
+                }
+            }
+        }
+
+        class 프로그래머스_난이도0_외계행성의나이 {
+            class Solution {
+                public String solution(int age) {
+                    String answer = "";
+
+                    // age = 23 -> "cd"
+                    //int니까 -> int[]로 만든뒤 반복문으로 +97 한뒤 string으로만들기
+
+                    int[] intArray = Stream.of(String.valueOf(age).split("")).mapToInt(Integer::parseInt).toArray();
+
+                    // intArray.forEach(i )
+                    // 이 int[] 반복시켜서 i + 97 할방법
+                    // IntStream.range(0, intArray.length).map(i -> i + 97);
+
+                    return Arrays.toString(intArray);
                 }
             }
         }
