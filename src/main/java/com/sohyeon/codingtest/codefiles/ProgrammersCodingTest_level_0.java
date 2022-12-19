@@ -1222,6 +1222,28 @@ public class ProgrammersCodingTest_level_0 {
                 }
             }
         }
+
+        class 프로그래머스_난이도0_피자나눠먹기2 {
+            class Solution {
+                public int solution(int n) {
+                    int answer = 0;
+
+                    //피자1판 = 6조각
+                    //모두 같은 수의 피자 -> n의 6의 배수인거 찾아야되네
+                    // answer = (n % 6 == 0)? n/6: wait;
+                    for(;;) {
+                        if(n % 6 == 0) {
+                            answer = n/6;
+                            break;
+                        } else {
+                            n++;
+                        }
+                    }
+
+                    return answer;
+                }
+            }
+        }
     }
 
 }
