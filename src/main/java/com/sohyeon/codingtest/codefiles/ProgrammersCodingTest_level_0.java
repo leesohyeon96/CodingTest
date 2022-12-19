@@ -1204,20 +1204,21 @@ public class ProgrammersCodingTest_level_0 {
         }
 
         class 프로그래머스_난이도0_외계행성의나이 {
+            //참고
+            //return String.valueOf(age).chars().mapToObj(operand -> String.valueOf((char) (49 + operand))).collect(Collectors.joining());
             class Solution {
                 public String solution(int age) {
-                    String answer = "";
-
-                    // age = 23 -> "cd"
-                    //int니까 -> int[]로 만든뒤 반복문으로 +97 한뒤 string으로만들기
-
                     int[] intArray = Stream.of(String.valueOf(age).split("")).mapToInt(Integer::parseInt).toArray();
+                    char[] ch = new char[intArray.length];
 
-                    // intArray.forEach(i )
-                    // 이 int[] 반복시켜서 i + 97 할방법
-                    // IntStream.range(0, intArray.length).map(i -> i + 97);
+                    for(int i = 0; i < intArray.length; i++) {
+                        intArray[i] += 97;
+                        ch[i] = (char)intArray[i];
+                    }
 
-                    return Arrays.toString(intArray);
+
+
+                    return String.valueOf(ch);
                 }
             }
         }
