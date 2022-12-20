@@ -1242,6 +1242,19 @@ public class ProgrammersCodingTest_level_0 {
                 }
             }
         }
+
+        class 프로그래머스_난이도0_최댓값만들기2 {
+            class Solution {
+                public int solution(int[] numbers) {
+
+                    // abs()로 절대값 된 애들중에 큰걸로 찾고
+                    // 양수인경우, 양수음수인경우, 음수인경우 따져서 하기
+                    int[] numer = Arrays.stream(numbers).sorted().toArray();
+
+                    return numer[numer.length - 2] * numer[numer.length - 1];
+                }
+            }
+        }
     }
 
 }
