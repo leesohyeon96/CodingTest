@@ -1227,16 +1227,14 @@ public class ProgrammersCodingTest_level_0 {
             class Solution {
                 public int solution(int n) {
                     int answer = 0;
+                    int num = 1;
 
-                    //피자1판 = 6조각
-                    //모두 같은 수의 피자 -> n의 6의 배수인거 찾아야되네
-                    // answer = (n % 6 == 0)? n/6: wait;
                     for(;;) {
-                        if(n % 6 == 0) {
-                            answer = n/6;
+                        if((n * num) % 6 == 0) {
+                            answer = (n * num)/6;
                             break;
                         } else {
-                            n++;
+                            num++;
                         }
                     }
 
