@@ -1247,11 +1247,29 @@ public class ProgrammersCodingTest_level_0 {
             class Solution {
                 public int solution(int[] numbers) {
 
-                    // abs()로 절대값 된 애들중에 큰걸로 찾고
+                    // 1. abs()로 절대값 된 애들중에 큰걸로 찾고
                     // 양수인경우, 양수음수인경우, 음수인경우 따져서 하기
-                    int[] numer = Arrays.stream(numbers).sorted().toArray();
+                    int answer = 0;
 
-                    return numer[numer.length - 2] * numer[numer.length - 1];
+                    // 2. 이중 for문으로 다 곱해보고 큰거찾기?
+                    for(int i = 0; i < numbers.length; i++) {
+                        for(int j = i + 1; j < numbers.length; j++) {
+                            System.out.println("?? : " + numbers[i] + " ?? : " + numbers[j]);
+                            if(numbers[i] * numbers[j - 1] < numbers[i] * numbers[j]) {
+                                answer = numbers[i]*numbers[j];
+                                System.out.println("?1 : " + answer);
+                            } else {
+                                answer = numbers[i]*numbers[j - 1];
+                                System.out.println("?2 : " + answer);
+                            }
+                        }
+                    }
+
+
+                    return answer;
+
+                    // int[] numer = Arrays.stream(numbers).sorted().toArray();
+                    // return numer[numer.length - 2] * numer[numer.length - 1];
                 }
             }
         }
