@@ -1247,29 +1247,26 @@ public class ProgrammersCodingTest_level_0 {
             class Solution {
                 public int solution(int[] numbers) {
 
-                    // 1. abs()로 절대값 된 애들중에 큰걸로 찾고
-                    // 양수인경우, 양수음수인경우, 음수인경우 따져서 하기
-                    int answer = 0;
+                    int answer = -1;
 
-                    // 2. 이중 for문으로 다 곱해보고 큰거찾기?
+                    // if((numbers.length >= 2 && numbers.length <= 100)
+                    // && (-10000 <= numbers[0] && numbers[numbers.length - 1] <= 10000)) {
                     for(int i = 0; i < numbers.length; i++) {
                         for(int j = i + 1; j < numbers.length; j++) {
-                            System.out.println("?? : " + numbers[i] + " ?? : " + numbers[j]);
-                            if(numbers[i] * numbers[j - 1] < numbers[i] * numbers[j]) {
+                            System.out.println("answer" + answer);
+                            if(answer < numbers[i]*numbers[j]) {
                                 answer = numbers[i]*numbers[j];
-                                System.out.println("?1 : " + answer);
-                            } else {
-                                answer = numbers[i]*numbers[j - 1];
-                                System.out.println("?2 : " + answer);
                             }
+                            //0따지면 2가 실패
+                            //0안따지면 7이 실패
+                            //테스트 케이스7의 실패이유? 반례의 경우를 파악해야 함 먼저
+                            // -> -10,000x2 = -20,000
+
                         }
                     }
-
-
+                    // }
                     return answer;
 
-                    // int[] numer = Arrays.stream(numbers).sorted().toArray();
-                    // return numer[numer.length - 2] * numer[numer.length - 1];
                 }
             }
         }
