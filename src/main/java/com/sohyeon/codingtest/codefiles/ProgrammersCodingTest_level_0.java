@@ -1244,29 +1244,21 @@ public class ProgrammersCodingTest_level_0 {
         }
 
         class 프로그래머스_난이도0_최댓값만들기2 {
+            // 참고 - 오옴...
+            //       Arrays.sort(numbers);
+            //        return numbers[numbers.length-1] * numbers[numbers.length-2] < numbers[0] * numbers[1] ?
+            //            numbers[0] * numbers[1] : numbers[numbers.length-1] * numbers[numbers.length-2];
             class Solution {
                 public int solution(int[] numbers) {
-
-                    int answer = -1;
-
-                    // if((numbers.length >= 2 && numbers.length <= 100)
-                    // && (-10000 <= numbers[0] && numbers[numbers.length - 1] <= 10000)) {
-                    for(int i = 0; i < numbers.length; i++) {
-                        for(int j = i + 1; j < numbers.length; j++) {
-                            System.out.println("answer" + answer);
-                            if(answer < numbers[i]*numbers[j]) {
-                                answer = numbers[i]*numbers[j];
+                    int answer= -100000000;
+                    for(int i=0; i<numbers.length-1; i++){
+                        for(int j=i+1; j<numbers.length; j++){
+                            if(answer<numbers[i]*numbers[j]){
+                                answer=numbers[i]*numbers[j];
                             }
-                            //0따지면 2가 실패
-                            //0안따지면 7이 실패
-                            //테스트 케이스7의 실패이유? 반례의 경우를 파악해야 함 먼저
-                            // -> -10,000x2 = -20,000
-
                         }
                     }
-                    // }
                     return answer;
-
                 }
             }
         }
