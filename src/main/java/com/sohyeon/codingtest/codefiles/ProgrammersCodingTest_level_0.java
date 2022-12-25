@@ -1264,4 +1264,21 @@ public class ProgrammersCodingTest_level_0 {
         }
     }
 
+    class 프로그래머스_난이도0_인덱스바꾸기 {
+        class Solution {
+            public String solution(String my_string, int num1, int num2) {
+                String answer = "";
+
+                //문자열 -> char[]
+                //if) ch[num1] = ch[num2];
+
+                // String.valueOf(my_string).chars().mapToObj(i -> String.valueOf((char) (49 + i))).collect(Collectors.joining());
+
+
+
+//                return String.valueOf(my_string).chars().map(i -> String.valueOf(i)).collect(Collectors.joining());
+            }
+        }
+    }
+
 }
