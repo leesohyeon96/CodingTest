@@ -1271,12 +1271,19 @@ public class ProgrammersCodingTest_level_0 {
 
                 //문자열 -> char[]
                 //if) ch[num1] = ch[num2];
-
-                // String.valueOf(my_string).chars().mapToObj(i -> String.valueOf((char) (49 + i))).collect(Collectors.joining());
-
+                //char[] ch = my_string.toCharArray;
 
 
-//                return String.valueOf(my_string).chars().map(i -> String.valueOf(i)).collect(Collectors.joining());
+                // IntStream.range(0, my_string.length())
+                // .filter(i -> i == num1)
+                // .mapToObj(c -> String.valueOf(my_string.charAt(c)))
+                // .collect(Collectors.joining());
+
+
+
+                return IntStream.range(0, my_string.length())
+                        .mapToObj(c -> String.valueOf(my_string.charAt(num1))) //map 2개 써서 해보기
+                        .collect(Collectors.joining());
             }
         }
     }
