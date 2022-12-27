@@ -1269,6 +1269,7 @@ public class ProgrammersCodingTest_level_0 {
         //List<String> list = Arrays.stream(myString.split("")).collect(Collectors.toList());
         //
         //        Collections.swap(list, num1, num2);
+        //         swap -> list안에 있는 데이터를 변경할 때 쓰이는 메소드
         //        return String.join("", list);
         class Solution {
             public String solution(String my_string, int num1, int num2) {
@@ -1287,6 +1288,19 @@ public class ProgrammersCodingTest_level_0 {
                 }
 
                 return String.valueOf(ch);
+            }
+        }
+    }
+
+    class 프로그래머스_난이도0_369게임 {
+        class Solution {
+            public int solution(int order) {
+                int answer = 0;
+
+                int[] intArray = Stream.of(String.valueOf(order).split("")).mapToInt(Integer::parseInt).toArray();
+                answer = (int)IntStream.range(0, intArray.length).filter(i-> ((intArray[i] != 0) && (intArray[i] % 3 == 0))).count();
+
+                return answer;
             }
         }
     }
