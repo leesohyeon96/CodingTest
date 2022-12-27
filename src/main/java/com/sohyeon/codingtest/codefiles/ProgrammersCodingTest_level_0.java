@@ -1265,25 +1265,28 @@ public class ProgrammersCodingTest_level_0 {
     }
 
     class 프로그래머스_난이도0_인덱스바꾸기 {
+        //참고
+        //List<String> list = Arrays.stream(myString.split("")).collect(Collectors.toList());
+        //
+        //        Collections.swap(list, num1, num2);
+        //        return String.join("", list);
         class Solution {
             public String solution(String my_string, int num1, int num2) {
-                String answer = "";
 
-                //문자열 -> char[]
-                //if) ch[num1] = ch[num2];
-                //char[] ch = my_string.toCharArray;
+                char[] ch = my_string.toCharArray();
+                char tmpCh = ' ';
 
+                for(int i = 0; i < ch.length; i++) {
+                    if(i == num1) {
+                        tmpCh = ch[i];
+                        ch[i] = ch[num2];
+                    }
+                    if(i == num2) {
+                        ch[i] = tmpCh;
+                    }
+                }
 
-                // IntStream.range(0, my_string.length())
-                // .filter(i -> i == num1)
-                // .mapToObj(c -> String.valueOf(my_string.charAt(c)))
-                // .collect(Collectors.joining());
-
-
-
-                return IntStream.range(0, my_string.length())
-                        .mapToObj(c -> String.valueOf(my_string.charAt(num1))) //map 2개 써서 해보기
-                        .collect(Collectors.joining());
+                return String.valueOf(ch);
             }
         }
     }
