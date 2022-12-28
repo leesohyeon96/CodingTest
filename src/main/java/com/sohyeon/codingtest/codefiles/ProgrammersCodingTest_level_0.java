@@ -1293,6 +1293,8 @@ public class ProgrammersCodingTest_level_0 {
     }
 
     class 프로그래머스_난이도0_369게임 {
+        //참고
+        //return (int) Arrays.stream(String.valueOf(order).split("")).map(Integer::parseInt).filter(i -> i == 3 || i == 6 || i == 9).count();
         class Solution {
             public int solution(int order) {
                 int answer = 0;
@@ -1300,6 +1302,24 @@ public class ProgrammersCodingTest_level_0 {
                 int[] intArray = Stream.of(String.valueOf(order).split("")).mapToInt(Integer::parseInt).toArray();
                 answer = (int)IntStream.range(0, intArray.length).filter(i-> ((intArray[i] != 0) && (intArray[i] % 3 == 0))).count();
 
+                return answer;
+            }
+        }
+    }
+
+    class 프로그래머스_난이도0_문자열정렬하기2 {
+        //참고
+        //char[] c = my_string.toLowerCase().toCharArray();
+        //        Arrays.sort(c);
+        //        return new String(c);
+
+//        import java.util.*;
+//import java.util.stream.*;
+        class Solution {
+            public String solution(String my_string) {
+                String answer = "";
+
+                answer = Arrays.stream(my_string.toLowerCase().split("")).sorted().collect(Collectors.joining());
                 return answer;
             }
         }
