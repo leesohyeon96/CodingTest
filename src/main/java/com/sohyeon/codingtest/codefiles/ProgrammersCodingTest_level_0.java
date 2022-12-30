@@ -1325,4 +1325,25 @@ public class ProgrammersCodingTest_level_0 {
         }
     }
 
+    class 프로그래머스_난이도0_합성수찾기 {
+        class Solution {
+            public int solution(int n) {
+                int answer = 0;
+
+                //1~n까지 반복문 돌면서
+                //약수구하는법
+                //IntStream.rangeClosed(1, n).filter(i -> n%i == 0).toArray();
+                //인 애들의 n들의 length를 cnt++하든해서 반환
+
+                long test = IntStream.rangeClosed(1, n)
+                        .filter(i -> n%i == 0)
+                        .count();
+
+                System.out.println("test : " + test);
+
+                return answer;
+            }
+        }
+    }
+
 }
