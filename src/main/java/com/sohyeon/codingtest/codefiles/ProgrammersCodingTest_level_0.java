@@ -1334,12 +1334,17 @@ public class ProgrammersCodingTest_level_0 {
                 //약수구하는법
                 //IntStream.rangeClosed(1, n).filter(i -> n%i == 0).toArray();
                 //인 애들의 n들의 length를 cnt++하든해서 반환
+                int cnt = 0;
 
-                long test = IntStream.rangeClosed(1, n)
-                        .filter(i -> n%i == 0)
-                        .count();
+                for(int i = 1; i <= n; i++) {
+                    if(IntStream.rangeClosed(1, n)
+                            .filter(j -> n%j == 0)
+                            .count() >= 3) {
+                        cnt++;
+                    }
+                }
 
-                System.out.println("test : " + test);
+                System.out.println("cnt : " + cnt);
 
                 return answer;
             }
