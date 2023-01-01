@@ -1330,25 +1330,17 @@ public class ProgrammersCodingTest_level_0 {
             public int solution(int n) {
                 int answer = 0;
 
-                //1~n까지 반복문 돌면서
-                //약수구하는법
-                //IntStream.rangeClosed(1, n).filter(i -> n%i == 0).toArray();
-                //인 애들의 n들의 length를 cnt++하든해서 반환
-                int cnt = 0;
-
                 for(int i = 1; i <= n; i++) {
-                    if(IntStream.rangeClosed(1, n)
-                            .filter(j -> n%j == 0)
-                            .count() >= 3) {
-                        cnt++;
+                    int key = i;
+                    if((IntStream.rangeClosed(1, key).filter(j -> key%j == 0).count()) >= 3) {
+                        answer++;
                     }
                 }
-
-                System.out.println("cnt : " + cnt);
 
                 return answer;
             }
         }
+
     }
 
 }
