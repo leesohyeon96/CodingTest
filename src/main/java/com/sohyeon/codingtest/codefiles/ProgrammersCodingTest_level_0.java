@@ -1326,6 +1326,8 @@ public class ProgrammersCodingTest_level_0 {
     }
 
     class 프로그래머스_난이도0_합성수찾기 {
+        //참고
+        //return (int) IntStream.rangeClosed(1, n).filter(i -> (int) IntStream.rangeClosed(1, i).filter(i2 -> i % i2 == 0).count() > 2).count();
         class Solution {
             public int solution(int n) {
                 int answer = 0;
@@ -1341,6 +1343,26 @@ public class ProgrammersCodingTest_level_0 {
             }
         }
 
+    }
+
+    class 프로그래머스_난이도0_중복된문자제거 {
+        //참고
+        //return my_string.chars()
+        //                .mapToObj(Character::toString)
+        //                .distinct()
+        //                .collect(Collectors.joining());
+
+        //참고2
+        //       String[] answer = my_string.split("");
+        //        Set<String> set = new LinkedHashSet<String>(Arrays.asList(answer));
+        //
+        //        return String.join("", set);
+        class Solution {
+            public String solution(String my_string) {
+                String answer = Arrays.stream(my_string.split("")).distinct().collect(Collectors.joining());
+                return answer;
+            }
+        }
     }
 
 }
