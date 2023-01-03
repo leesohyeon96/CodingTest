@@ -1365,4 +1365,25 @@ public class ProgrammersCodingTest_level_0 {
         }
     }
 
+    class 프로그래머스_난이도0_팩토리얼 {
+        class Solution {
+            public int solution(int n) {
+                int answer = 0;
+                int result = 0;
+
+                // n-1 <= n <= n+1
+                // 1부터 ~ 10까지 반복해서
+                for(int i = 1; i <= 10; i++) { //1~10까지
+                    for(int j = i; j <= i; j++) { //1
+                        result *= j;
+                        answer = (result < n)? j+1 : j;
+                        //if(answer에 값 들어가면 break;)
+                    }
+                }
+
+                return answer;
+            }
+        }
+    }
+
 }
