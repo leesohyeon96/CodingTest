@@ -1373,10 +1373,19 @@ public class ProgrammersCodingTest_level_0 {
 
                 // n-1 <= n <= n+1
                 // 1부터 ~ 10까지 반복해서
-                for(int i = 1; i <= 10; i++) { //1~10까지
+                test : for(int i = 1; i <= 10; i++) { //1~10까지
                     for(int j = i; j <= i; j++) { //1
                         result *= j;
-                        answer = (result < n)? j+1 : j;
+                        if(result > n) {
+                            continue;
+                        } else if(result == n) {
+                            answer = j;
+                            break test;
+                        } else if(result < n) {
+                            answer = j + 1;
+                            break test;
+                        }
+                        // answer = (< result < n)? j+1 : j;
                         //if(answer에 값 들어가면 break;)
                     }
                 }
