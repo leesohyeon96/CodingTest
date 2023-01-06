@@ -1369,28 +1369,23 @@ public class ProgrammersCodingTest_level_0 {
         class Solution {
             public int solution(int n) {
                 int answer = 0;
-                int result = 0;
 
-                // n-1 <= n <= n+1
-                // 1부터 ~ 10까지 반복해서
-                test : for(int i = 1; i <= 10; i++) { //1~10까지
-                    for(int j = i; j <= i; j++) { //1
-                        result *= j;
-                        if(result > n) {
-                            continue;
-                        } else if(result == n) {
-                            answer = j;
-                            break test;
-                        } else if(result < n) {
-                            answer = j + 1;
-                            break test;
-                        }
-                        // answer = (< result < n)? j+1 : j;
-                        //if(answer에 값 들어가면 break;)
+                for(int i = 1; i <= 10; i++) {
+                    if(fact(i) > n) {
+                        continue;
+                    } else {
+                        answer = i;
                     }
                 }
 
                 return answer;
+            }
+
+            public int fact(int n) {
+                if(n <= 1)
+                    return n;
+                else
+                    return fact(n-1)*n;
             }
         }
     }
