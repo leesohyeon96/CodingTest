@@ -1366,6 +1366,18 @@ public class ProgrammersCodingTest_level_0 {
     }
 
     class 프로그래머스_난이도0_팩토리얼 {
+        //참고
+        //int fac = 1;
+        //        int i = 0;
+        //
+        //        while(true){
+        //            if(fac <= n){
+        //                fac *= i + 1;
+        //                i++;
+        //            }else break;
+        //        }
+        //
+        //        return i-1;
         class Solution {
             public int solution(int n) {
                 int answer = 0;
@@ -1386,6 +1398,27 @@ public class ProgrammersCodingTest_level_0 {
                     return n;
                 else
                     return fact(n-1)*n;
+            }
+        }
+    }
+
+    class 프로그래머스_난이도0_모스부호1 {
+
+        class Solution {
+            public String solution(String letter) {
+                String answer = "";
+                String[] morse = {
+                        ".-","-...","-.-.","-..",".","..-.",
+                        "--.","....","..",".---","-.-",".-..",
+                        "--","-.","---",".--.","--.-",".-.",
+                        "...","-","..-","...-",".--","-..-",
+                        "-.--","--.."
+                };
+
+                //letter split(" ")로 나눠서
+                answer = Stream.of(letter.split(" ")).collect(Collectors.joining());
+
+                return answer;
             }
         }
     }
