@@ -3,6 +3,7 @@ package com.sohyeon.codingtest.codefiles;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -1405,6 +1406,41 @@ public class ProgrammersCodingTest_level_0 {
     }
 
     class 프로그래머스_난이도0_모스부호1 {
+        //참고
+        //Map<String, String> dictionary = new HashMap<>() {{
+        //        put(".-", "a");
+        //        put("-...", "b");
+        //        put("-.-.", "c");
+        //        put("-..", "d");
+        //        put(".", "e");
+        //        put("..-.", "f");
+        //        put("--.", "g");
+        //        put("....", "h");
+        //        put("..", "i");
+        //        put(".---", "j");
+        //        put("-.-", "k");
+        //        put(".-..", "l");
+        //        put("--", "m");
+        //        put("-.", "n");
+        //        put("---", "o");
+        //        put(".--.", "p");
+        //        put("--.-", "q");
+        //        put(".-.", "r");
+        //        put("...", "s");
+        //        put("-", "t");
+        //        put("..-", "u");
+        //        put("...-", "v");
+        //        put(".--", "w");
+        //        put("-..-", "x");
+        //        put("-.--", "y");
+        //        put("--..", "z");
+        //    }};
+        //
+        //    public String solution(String letter) {
+        //        return Arrays.stream(letter.split(" "))
+        //            .map(dictionary::get)
+        //            .collect(Collectors.joining());
+        //    }
 
         class Solution {
             public String solution(String letter) {
@@ -1434,6 +1470,27 @@ public class ProgrammersCodingTest_level_0 {
                 }
 
                 return sb.toString();
+            }
+        }
+    }
+
+    class 프로그래머스_난이도0_A로B만들기 {
+        class Solution {
+            public int solution(String before, String after) {
+
+                int answer = 0;
+                int beforeSum = 0;
+                int afterSum = 0;
+
+                for(int i = 0; i < before.length(); i++) {
+                    beforeSum += before.charAt(i);
+                    afterSum += after.charAt(i);
+                }
+
+                answer = (beforeSum == afterSum)? 1: 0;
+
+
+                return answer;
             }
         }
     }
