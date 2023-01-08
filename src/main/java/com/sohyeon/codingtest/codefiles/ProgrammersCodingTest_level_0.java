@@ -1,6 +1,8 @@
 package com.sohyeon.codingtest.codefiles;
 
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -1406,7 +1408,8 @@ public class ProgrammersCodingTest_level_0 {
 
         class Solution {
             public String solution(String letter) {
-                String answer = "";
+                StringBuilder sb = new StringBuilder();
+
                 String[] morse = {
                         ".-","-...","-.-.","-..",".","..-.",
                         "--.","....","..",".---","-.-",".-..",
@@ -1415,10 +1418,22 @@ public class ProgrammersCodingTest_level_0 {
                         "-.--","--.."
                 };
 
-                //letter split(" ")로 나눠서
-                answer = Stream.of(letter.split(" ")).collect(Collectors.joining());
+                String[] mossAlpah = {
+                        "a", "b", "c", "d", "e", "f", "g", "h",
+                        "i","j","k","l","m","n","o","p","q","r","s","t","u","v","w", "x", "y","z"
+                };
 
-                return answer;
+                String[] letterArray = letter.split(" ");
+
+                for(int i = 0; i < letterArray.length; i++) {
+                    for(int j = 0; j < morse.length; j++) {
+                        if(letterArray[i].equals(morse[j])) {
+                            sb.append(mossAlpah[j]);
+                        }
+                    }
+                }
+
+                return sb.toString();
             }
         }
     }
