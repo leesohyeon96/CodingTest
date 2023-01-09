@@ -1475,6 +1475,19 @@ public class ProgrammersCodingTest_level_0 {
     }
 
     class 프로그래머스_난이도0_A로B만들기 {
+        //참고
+        //        char[] a = before.toCharArray();
+        //        char[] b = after.toCharArray();
+        //        Arrays.sort(a);
+        //        Arrays.sort(b);
+        //
+        //        return new String(a).equals(new String(b)) ? 1 :0;
+
+        //참고
+        //       for(int i = 0; i < before.length(); i++){
+        //            after = after.replaceFirst(before.substring(i,i+1),"");
+        //        }
+        //        return after.length() == 0? 1: 0;
         class Solution {
             public int solution(String before, String after) {
 
@@ -1495,4 +1508,22 @@ public class ProgrammersCodingTest_level_0 {
         }
     }
 
+    class 프로그래머스_난이도0_2차원으로만들기 {
+        class Solution {
+            public int[][] solution(int[] num_list, int n) {
+                int[][] answer = new int[num_list.length/n][n];
+                int cnt = 0;
+
+                for(int i = 0; i < answer.length; i++) {
+                    for(int j = 0; j < answer[i].length; j++) {
+                        answer[i][j] = num_list[cnt];
+                        cnt++;
+                    }
+                }
+
+
+                return answer;
+            }
+        }
+    }
 }
