@@ -1509,6 +1509,18 @@ public class ProgrammersCodingTest_level_0 {
     }
 
     class 프로그래머스_난이도0_2차원으로만들기 {
+        //참고
+        //       int[][] answer = {};
+        //
+        //        int length = num_list.length;
+        //
+        //        answer = new int[length/n][n];
+        //
+        //        for(int i=0; i<length; i++){
+        //            answer[i/n][i%n]=num_list[i];
+        //        }
+        //
+        //        return answer;
         class Solution {
             public int[][] solution(int[] num_list, int n) {
                 int[][] answer = new int[num_list.length/n][n];
@@ -1521,6 +1533,29 @@ public class ProgrammersCodingTest_level_0 {
                     }
                 }
 
+
+                return answer;
+            }
+        }
+    }
+
+    class 프로그래머스_난이도0_k의개수 {
+        class Solution {
+            public int solution(int i, int j, int k) {
+                int answer = 0;
+                int[] intArray = IntStream.rangeClosed(i, j).toArray();
+
+                // i ~ j 까지 k가 몇번 두두등장하는지
+                //IntStream.rangeClosed(i, j)
+                //1. string[]로 바꿔서 string인 k가 들어가 있으면 cnt++;
+                if(IntStream.of(intArray).anyMatch(x -> x == k)) {
+                    answer++;
+                    System.out.println("뭐여?" + answer);
+                    System.out.println("뭐여?" + k);
+                }
+
+                // 2. int -> int[]로 만들어서
+                // IntStream.of()
 
                 return answer;
             }
