@@ -1545,17 +1545,16 @@ public class ProgrammersCodingTest_level_0 {
                 int answer = 0;
                 int[] intArray = IntStream.rangeClosed(i, j).toArray();
 
-                // i ~ j 까지 k가 몇번 두두등장하는지
-                //IntStream.rangeClosed(i, j)
-                //1. string[]로 바꿔서 string인 k가 들어가 있으면 cnt++;
-                if(IntStream.of(intArray).anyMatch(x -> x == k)) {
-                    answer++;
-                    System.out.println("뭐여?" + answer);
-                    System.out.println("뭐여?" + k);
+                for(int z = 0; z < intArray.length; z++){
+
+                    // if(IntStream.of(intArray).anyMatch(x -> x == k)) {
+                    // System.out.println("?" + answer);
+                    // System.out.println("k : " + k);
+                    // answer++;
+                    // }
                 }
 
-                // 2. int -> int[]로 만들어서
-                // IntStream.of()
+                //toChar(); -> 돌면서 tochar로 이중for문돌려서 1잇으면 ++;해야될듯
 
                 return answer;
             }
