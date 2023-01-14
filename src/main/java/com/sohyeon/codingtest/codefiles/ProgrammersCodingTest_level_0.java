@@ -1568,7 +1568,7 @@ public class ProgrammersCodingTest_level_0 {
 
                 //반복문 돌면서 n - [i] 한값을 저장하고
                 //그 값이 다음 n-[i] 값보다 작으면 [i] 해서 하면 될듯
-
+//?
 
                 return answer;
             }
