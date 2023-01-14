@@ -1560,4 +1560,18 @@ public class ProgrammersCodingTest_level_0 {
             }
         }
     }
+
+    class 프로그래머스_난이도0_가까운수 {
+        class Solution {
+            public int solution(int[] array, int n) {
+                int answer = 0;
+
+                //반복문 돌면서 n - [i] 한값을 저장하고
+                //그 값이 다음 n-[i] 값보다 작으면 [i] 해서 하면 될듯
+
+
+                return answer;
+            }
+        }
+    }
 }
