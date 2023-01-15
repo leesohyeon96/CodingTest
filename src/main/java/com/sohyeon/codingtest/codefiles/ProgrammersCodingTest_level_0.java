@@ -1565,10 +1565,20 @@ public class ProgrammersCodingTest_level_0 {
         class Solution {
             public int solution(int[] array, int n) {
                 int answer = 0;
+                int preValue = 0;
 
-                //반복문 돌면서 n - [i] 한값을 저장하고
-                //그 값이 다음 n-[i] 값보다 작으면 [i] 해서 하면 될듯
-//?
+                List<Integer> list = Arrays.stream(array).map(el -> Math.abs(el - n))
+                        .sorted()
+                        .boxed()
+                        .collect(Collectors.toList());
+                for(int i = 0; i < list.size(); i++) {
+                    if(preValue - preValue <= 0) {
+                        answer = array[i];
+                    }
+
+                    preValue = list.get(i);
+                }
+
 
                 return answer;
             }
