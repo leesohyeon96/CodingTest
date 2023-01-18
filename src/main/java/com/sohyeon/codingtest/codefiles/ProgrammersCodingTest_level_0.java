@@ -1568,30 +1568,19 @@ public class ProgrammersCodingTest_level_0 {
                 int answer = 0;
 
                 List<Integer> list = Arrays.stream(array)
-                        //.sorted()
                         .map(el -> Math.abs(el - n))
                         .boxed()
                         .collect(Collectors.toList());
 
                 int a = Collections.min(list);
-                // 스트림 돌려서 편차가 같은 것이 있는 경우 더 작은 애를 return
-                int[] test = list.stream()
-                        .filter(i -> Math.abs(i) == a)
-                        .mapToInt(i -> i)
-                        .toArray();
 
-                for(int i = 0; i < list.size(); i++) {
-                    System.out.println("ㅋ  : " + list.get(i));
-                }
+                List<Integer> reallist = Arrays.stream(array)
+                        .sorted()
+                        .filter(i -> Math.abs(n-i) == a)
+                        .boxed()
+                        .collect(Collectors.toList());
 
-                System.out.println("ㅋ  : " + list.indexOf(8));
-
-
-                if(test.length > 1) {
-                    answer = array[list.indexOf(test[0])];
-                } else {
-                    answer = array[list.indexOf(a)];
-                }
+                answer = reallist.get(0);
 
                 return answer;
             }
