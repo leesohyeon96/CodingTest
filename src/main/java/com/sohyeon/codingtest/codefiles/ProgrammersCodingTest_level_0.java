@@ -1543,19 +1543,19 @@ public class ProgrammersCodingTest_level_0 {
     class 프로그래머스_난이도0_k의개수 {
         class Solution {
             public int solution(int i, int j, int k) {
+
                 int answer = 0;
+
                 int[] intArray = IntStream.rangeClosed(i, j).toArray();
+                String str = Arrays.toString(intArray).replaceAll("[^0-9]","");
 
-                for(int z = 0; z < intArray.length; z++){
+                char[] ch = str.toCharArray();
 
-                    // if(IntStream.of(intArray).anyMatch(x -> x == k)) {
-                    // System.out.println("?" + answer);
-                    // System.out.println("k : " + k);
-                    // answer++;
-                    // }
+                for(int z = 0; z < ch.length; z++) {
+                    if(ch[z] - '0' == k) {
+                        answer++;
+                    }
                 }
-
-                //toChar(); -> 돌면서 tochar로 이중for문돌려서 1잇으면 ++;해야될듯
 
                 return answer;
             }
@@ -1563,6 +1563,27 @@ public class ProgrammersCodingTest_level_0 {
     }
 
     class 프로그래머스_난이도0_가까운수 {
+        //참고
+        //return Math.min(array[Arrays
+        //                          .stream(array)
+        //                          .map(operand -> Math.abs(n - operand))
+        //                          .boxed()
+        //                          .collect(Collectors.toList())
+        //                          .indexOf(Arrays
+        //                                      .stream(array)
+        //                                      .map(operand -> Math.abs(n - operand))
+        //                          .min()
+        //                          .orElse(0))],
+        //
+        //           array[Arrays.stream(array)
+        //                       .map(operand -> Math.abs(n - operand))
+        //                       .boxed()
+        //                       .collect(Collectors.toList())
+        //                       .lastIndexOf(Arrays
+        //                                      .stream(array)
+        //                                      .map(operand -> Math.abs(n - operand))
+        //                                      .min()
+        //                                      .orElse(0))]);
         class Solution {
             public int solution(int[] array, int n) {
                 int answer = 0;
