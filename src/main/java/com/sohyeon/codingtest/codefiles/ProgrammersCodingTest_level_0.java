@@ -1541,6 +1541,13 @@ public class ProgrammersCodingTest_level_0 {
     }
 
     class 프로그래머스_난이도0_k의개수 {
+        //참고
+        //String str = "";
+        //        for(int a = i; a <= j; a++) {
+        //            str += a+"";
+        //        }
+        //
+        //        return str.length() - str.replace(k+"", "").length();
         class Solution {
             public int solution(int i, int j, int k) {
 
@@ -1602,6 +1609,31 @@ public class ProgrammersCodingTest_level_0 {
                         .collect(Collectors.toList());
 
                 answer = reallist.get(0);
+
+                return answer;
+            }
+        }
+    }
+
+    class 프로그래머스_난이도0_진료순서정하기 {
+        class Solution {
+            public int[] solution(int[] emergency) {
+                int[] answer = {};
+
+                // 3에서부터 무조건 시작해서
+                //[0] > [1] 이면 3에서 --;
+                //[0] < [1] 이면 1에서 ++;
+                //
+                // Arrays.stream(emergency)
+                //     .map(i -> Arrays.stream(emergency)
+                //                   .map(j -> if(i < j)? )
+                //            )
+                for(int i = 0; i < emergency.length; i++) {
+                    for(int j = 0; j < emergency.length; j++) {
+
+                    }
+                }
+
 
                 return answer;
             }
