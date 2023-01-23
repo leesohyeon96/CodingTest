@@ -1618,23 +1618,16 @@ public class ProgrammersCodingTest_level_0 {
     class 프로그래머스_난이도0_진료순서정하기 {
         class Solution {
             public int[] solution(int[] emergency) {
-                int[] answer = {};
+                int[] answer = new int[emergency.length];
 
-                // 3에서부터 무조건 시작해서
-                //[0] > [1] 이면 3에서 --;
-                //[0] < [1] 이면 1에서 ++;
-                //
-                // Arrays.stream(emergency)
-                //     .map(i -> Arrays.stream(emergency)
-                //                   .map(j -> if(i < j)? )
-                //            )
                 for(int i = 0; i < emergency.length; i++) {
+                    answer[i] = emergency.length;
                     for(int j = 0; j < emergency.length; j++) {
-
+                        if(emergency[i] > emergency[j]) {
+                            answer[i] -= 1;
+                        }
                     }
                 }
-
-
                 return answer;
             }
         }
