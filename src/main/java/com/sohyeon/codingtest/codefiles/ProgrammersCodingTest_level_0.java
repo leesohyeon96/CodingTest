@@ -1616,6 +1616,8 @@ public class ProgrammersCodingTest_level_0 {
     }
 
     class 프로그래머스_난이도0_진료순서정하기 {
+        //참고
+        //return Arrays.stream(e).map(i -> Arrays.stream(e).boxed().sorted(Comparator.reverseOrder()).collect(Collectors.toList()).indexOf(i) + 1).toArray();
         class Solution {
             public int[] solution(int[] emergency) {
                 int[] answer = new int[emergency.length];
@@ -1628,6 +1630,24 @@ public class ProgrammersCodingTest_level_0 {
                         }
                     }
                 }
+                return answer;
+            }
+        }
+    }
+
+    class 프로그래머스_난이도0_한번만등장한문자 {
+        class Solution {
+            public String solution(String s) {
+                String answer = "";
+                char[] ch = answer.toCharArray();
+
+                //1번만 나온 알파벳들을 순서대로 정렬해서 보여주기
+                //indexOf 한 것이 lengt가 1인 string들의 값을
+                //하나의 string으로 반환
+                for(int i = 0; i < ch.length; i++) {
+                    System.out.println("? : " + ch[i]);
+                }
+
                 return answer;
             }
         }
