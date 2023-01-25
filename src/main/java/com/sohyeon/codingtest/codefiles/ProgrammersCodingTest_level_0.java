@@ -1641,14 +1641,24 @@ public class ProgrammersCodingTest_level_0 {
                 String answer = "";
                 char[] ch = answer.toCharArray();
 
+                //System.out.println("??: " + answer.indexOf("a"));
                 //1번만 나온 알파벳들을 순서대로 정렬해서 보여주기
                 //indexOf 한 것이 lengt가 1인 string들의 값을
                 //하나의 string으로 반환
-                for(int i = 0; i < ch.length; i++) {
-                    System.out.println("? : " + ch[i]);
+                for(int i = 0; i < answer.length(); i++) {
+                    System.out.println("안도는겨?");
+                    //System.out.println("??: " + ch[i].indexOf("a"));
+                    if(countChar(answer, ch[i]) > 1) {
+                        System.out.println("result개수 ");
+                    }
                 }
 
+
                 return answer;
+            }
+
+            public int countChar(String str, char ch) {
+                return str.length() - str.replace(String.valueOf(ch), "").length();
             }
         }
     }
