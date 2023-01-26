@@ -1636,23 +1636,30 @@ public class ProgrammersCodingTest_level_0 {
     }
 
     class 프로그래머스_난이도0_한번만등장한문자 {
+
+        //참고
+        // Arrays.stream(s.split(""))
+        //                .collect(Collectors.groupingBy(s1 -> s1))
+        //                .entrySet()
+        //                .stream()
+        //                .filter(entry -> entry.getValue().size() <= 1)
+        //                .map(Map.Entry::getKey)
+        //                .sorted()
+        //                .collect(Collectors.joining());
         class Solution {
             public String solution(String s) {
                 String answer = "";
-                char[] ch = answer.toCharArray();
+                char[] ch = s.toCharArray();
+                List<String> list = new ArrayList();
 
-                //System.out.println("??: " + answer.indexOf("a"));
-                //1번만 나온 알파벳들을 순서대로 정렬해서 보여주기
-                //indexOf 한 것이 lengt가 1인 string들의 값을
-                //하나의 string으로 반환
-                for(int i = 0; i < answer.length(); i++) {
-                    System.out.println("안도는겨?");
-                    //System.out.println("??: " + ch[i].indexOf("a"));
-                    if(countChar(answer, ch[i]) > 1) {
-                        System.out.println("result개수 ");
+                for(int i = 0; i < s.length(); i++) {
+                    if(countChar(s, ch[i]) == 1) {
+                        list.add(String.valueOf(ch[i]));
                     }
                 }
 
+                answer = list.stream().sorted()
+                        .collect(Collectors.joining());
 
                 return answer;
             }
