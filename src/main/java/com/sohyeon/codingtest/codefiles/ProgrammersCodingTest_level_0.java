@@ -1,5 +1,7 @@
 package com.sohyeon.codingtest.codefiles;
 
+import org.springframework.util.StringUtils;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -1666,6 +1668,26 @@ public class ProgrammersCodingTest_level_0 {
 
             public int countChar(String str, char ch) {
                 return str.length() - str.replace(String.valueOf(ch), "").length();
+            }
+        }
+    }
+
+    class 프로그래머스_난이도0_숨어있는숫자의덧셈2 {
+        class Solution {
+            public int solution(String my_string) {
+                int answer = 0;
+
+                //자연수없는경우 0 리턴
+                //자연수있으면 그 값을 더한 값을 리턴
+                char[] ch = my_string.toCharArray();
+
+                //if(StringUtils.matchesCharacter())
+
+                    //1. 문자인지 숫자인지 구분(char배열에서 아스키문자가 아닌 경우)
+                    //2. 숫자인 경우 어디까지 숫자인지 구분
+                    //3. 숫자끼리 더하기
+
+                    return answer;
             }
         }
     }
