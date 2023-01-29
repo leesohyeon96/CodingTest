@@ -1676,18 +1676,30 @@ public class ProgrammersCodingTest_level_0 {
         class Solution {
             public int solution(String my_string) {
                 int answer = 0;
-
-                //자연수없는경우 0 리턴
-                //자연수있으면 그 값을 더한 값을 리턴
                 char[] ch = my_string.toCharArray();
 
-                //if(StringUtils.matchesCharacter())
+                // stream말고 iterator 사용해보자
+                //Arrays.stream((Character)ch)
+                        //'A'가 숫자면 그 다음 애를 보류?
+                  //      .filter(i -> )
+                    //    .elseTo?(0);
 
-                    //1. 문자인지 숫자인지 구분(char배열에서 아스키문자가 아닌 경우)
-                    //2. 숫자인 경우 어디까지 숫자인지 구분
-                    //3. 숫자끼리 더하기
+//         for(int i = 0; i < ch.length; i++) {
+//             //48 - 57
+//             if(ch[i] >= 48 && ch[i] <= 57) {
 
-                    return answer;
+//             } else return 0;
+//         }
+
+                //indexOf(숫자)나올때 그 뒤에가 또 숫자가 아니면 바로 ++; 다음이계속숫자면 "1"+"2"+"3"헤서
+                //숫자로 만들어서 ++;?
+                //if(String.)
+
+                //1. 문자인지 숫자인지 구분(char배열에서 아스키문자가 아닌 경우)
+                //2. 숫자인 경우 어디까지 숫자인지 구분
+                //3. 숫자끼리 더하기
+
+                return answer;
             }
         }
     }
