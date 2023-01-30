@@ -1673,33 +1673,37 @@ public class ProgrammersCodingTest_level_0 {
     }
 
     class 프로그래머스_난이도0_숨어있는숫자의덧셈2 {
+        // \\D -> 대문자, 소문자
+        // \\s+ -> 숫자인듯?
+        // 중요,,,
+        // 참고
+        //        int answer = 0;
+        //
+        //        String[] str = my_string.replaceAll("[a-zA-Z]", " ").split(" ");
+        //
+        //        for(String s : str){
+        //            if(!s.equals("")) answer += Integer.valueOf(s);
+        //        }
+        //
+        //        return answer;
         class Solution {
             public int solution(String my_string) {
                 int answer = 0;
-                char[] ch = my_string.toCharArray();
+                my_string = my_string.replaceAll("\\D", " ").replaceAll("\\s+", " ").trim();
 
-                // stream말고 iterator 사용해보자
-                //Arrays.stream((Character)ch)
-                        //'A'가 숫자면 그 다음 애를 보류?
-                  //      .filter(i -> )
-                    //    .elseTo?(0);
+                if(my_string.equals("")) {
+                    return 0;
 
-//         for(int i = 0; i < ch.length; i++) {
-//             //48 - 57
-//             if(ch[i] >= 48 && ch[i] <= 57) {
+                } else {
+                    String[] str = my_string.split("\\s");
 
-//             } else return 0;
-//         }
+                    for (String s : str) {
+                        s = s.trim();
+                        answer += Integer.parseInt(s);
+                    }
 
-                //indexOf(숫자)나올때 그 뒤에가 또 숫자가 아니면 바로 ++; 다음이계속숫자면 "1"+"2"+"3"헤서
-                //숫자로 만들어서 ++;?
-                //if(String.)
-
-                //1. 문자인지 숫자인지 구분(char배열에서 아스키문자가 아닌 경우)
-                //2. 숫자인 경우 어디까지 숫자인지 구분
-                //3. 숫자끼리 더하기
-
-                return answer;
+                    return answer;
+                }
             }
         }
     }
