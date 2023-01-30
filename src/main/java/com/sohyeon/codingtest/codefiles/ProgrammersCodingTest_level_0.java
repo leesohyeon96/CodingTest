@@ -1675,17 +1675,19 @@ public class ProgrammersCodingTest_level_0 {
     class 프로그래머스_난이도0_숨어있는숫자의덧셈2 {
         // \\D -> 대문자, 소문자
         // \\s+ -> 숫자인듯?
-        // 중요,,,
+
         // 참고
-        //        int answer = 0;
+        //  int answer = 0;
         //
-        //        String[] str = my_string.replaceAll("[a-zA-Z]", " ").split(" ");
+        //  String[] str = my_string.replaceAll("[a-zA-Z]", " ").split(" ");
         //
-        //        for(String s : str){
-        //            if(!s.equals("")) answer += Integer.valueOf(s);
-        //        }
-        //
-        //        return answer;
+        //  for(String s : str){
+        //    if(!s.equals("")) answer += Integer.valueOf(s);
+        //  }
+        //  return answer;
+
+        // 참고
+        // Arrays.stream(myString.split("[A-Z|a-z]")).filter(s -> !s.isEmpty()).mapToInt(Integer::parseInt).sum();
         class Solution {
             public int solution(String my_string) {
                 int answer = 0;
@@ -1704,6 +1706,16 @@ public class ProgrammersCodingTest_level_0 {
 
                     return answer;
                 }
+            }
+        }
+    }
+
+    class 프로그래머스_난이도0_이진수더하기 {
+        class Solution {
+            public String solution(String bin1, String bin2) {
+                int total = Integer.parseInt(bin1, 2) + Integer.parseInt(bin2, 2);
+
+                return Integer.toBinaryString(total);
             }
         }
     }
