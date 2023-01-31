@@ -1719,4 +1719,14 @@ public class ProgrammersCodingTest_level_0 {
             }
         }
     }
+
+    class 프로그래머스_난이도0_평균구하기 {
+        // 참고
+        // Arrays.stream(arr).average().orElse(0);
+        class Solution {
+            public double solution(int[] arr) {
+                return (double)(Arrays.stream(arr).sum()) / arr.length ;
+            }
+        }
+    }
 }
