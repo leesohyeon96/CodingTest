@@ -1729,4 +1729,23 @@ public class ProgrammersCodingTest_level_0 {
             }
         }
     }
+
+    class 프로그래머스_난이도0_7의개수 {
+        class Solution {
+            public int solution(int[] array) {
+                int answer = 0;
+
+                //7, 77, 17
+
+                //i를 7로 나누면?
+                //10으로 나누고 7로 나눠서 몫이 1이면
+                //100의 경우도 710/100 -> 71/10 -> 7?
+                //
+
+                //answer =  (int)(Arrays.stream(array).filter(i -> i.contains == 7).count().orElse(0));
+
+                return answer;
+            }
+        }
+    }
 }
