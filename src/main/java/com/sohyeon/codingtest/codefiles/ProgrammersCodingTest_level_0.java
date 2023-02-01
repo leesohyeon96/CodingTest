@@ -1735,14 +1735,18 @@ public class ProgrammersCodingTest_level_0 {
             public int solution(int[] array) {
                 int answer = 0;
 
-                //7, 77, 17
+                //방법2 : 배열내에서 또 배열을 만들어서 77 -> [7, 7]
+                // 17 -> [1, 7]
+                //로 만든 뒤 i == 7이면 count 하도록?
+                answer =  (int)(Arrays
+                        .stream(array)
+                        .filter(i -> i == 7/* i == 7 */
+                                // i = 77
+                                //stream형인 i를 int[]로 만들기
 
-                //i를 7로 나누면?
-                //10으로 나누고 7로 나눠서 몫이 1이면
-                //100의 경우도 710/100 -> 71/10 -> 7?
-                //
 
-                //answer =  (int)(Arrays.stream(array).filter(i -> i.contains == 7).count().orElse(0));
+                        )
+                        .count());
 
                 return answer;
             }
