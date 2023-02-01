@@ -1742,7 +1742,7 @@ public class ProgrammersCodingTest_level_0 {
                         .stream(array)
                         .filter(i -> i == 7/* i == 7 */
                                 // i = 77
-                                //stream형인 i를 int[]로 만들기
+                                //stream형인 i를 int[]로 만들기,
 
 
                         )
