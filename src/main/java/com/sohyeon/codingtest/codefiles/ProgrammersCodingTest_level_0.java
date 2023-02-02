@@ -1735,15 +1735,14 @@ public class ProgrammersCodingTest_level_0 {
             public int solution(int[] array) {
                 int answer = 0;
 
-                //방법2 : 배열내에서 또 배열을 만들어서 77 -> [7, 7]
-                // 17 -> [1, 7]
-                //로 만든 뒤 i == 7이면 count 하도록?
-                //Stream<int[]> intList =
-                        Arrays
-                        .stream(array) //IntStream
-                        .mapToObj(i -> Stream.of(String.valueOf(i).split(""))
-                                                .mapToInt(Integer::parseInt).toArray())
-                        ;
+                answer = Arrays
+                .stream(array)
+                .mapToLong(i -> Arrays.stream(Stream.of(String.valueOf(i).split(""))
+                                        .mapToInt(Integer::parseInt).toArray())
+                                        .filter(num -> num == 7).count())
+                                        .mapToInt(num -> (int)num)
+                                        .sum();
+
 
                 return answer;
             }
