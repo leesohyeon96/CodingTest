@@ -1731,6 +1731,15 @@ public class ProgrammersCodingTest_level_0 {
     }
 
     class 프로그래머스_난이도0_7의개수 {
+        //참고
+        //(int) Arrays.stream(
+        //                        Arrays.stream(array)
+        //                                .mapToObj(String::valueOf)
+        //                                .collect(Collectors.joining())
+        //                                .split("")
+        //                )
+        //                .filter(s -> s.equals("7"))
+        //                .count();
         class Solution {
             public int solution(int[] array) {
                 int answer = 0;
@@ -1743,6 +1752,22 @@ public class ProgrammersCodingTest_level_0 {
                                         .mapToInt(num -> (int)num)
                                         .sum();
 
+
+                return answer;
+            }
+        }
+    }
+
+    class 프로그래머스_난이도0_공던지기 {
+        class Solution {
+            public int solution(int[] numbers, int k) {
+                int answer = 0;
+
+                // 공 1번부터 던짐
+                // 오른쪽 1명 건너뛰고 그 사람한테 던짐
+                // k번째로 공을 던지는 사람의 번호는?
+
+                // answer = 2 * k?
 
                 return answer;
             }
