@@ -1762,12 +1762,13 @@ public class ProgrammersCodingTest_level_0 {
         class Solution {
             public int solution(int[] numbers, int k) {
                 int answer = 0;
+                int index = (2 * k) - 1;
 
-                // 공 1번부터 던짐
-                // 오른쪽 1명 건너뛰고 그 사람한테 던짐
-                // k번째로 공을 던지는 사람의 번호는?
+                if(index > numbers.length) {
+                    index -= numbers.length;
+                }
 
-                // answer = 2 * k?
+                answer = numbers[index - 1];
 
                 return answer;
             }
