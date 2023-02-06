@@ -1762,13 +1762,29 @@ public class ProgrammersCodingTest_level_0 {
         class Solution {
             public int solution(int[] numbers, int k) {
                 int answer = 0;
-                int index = (2 * k) - 1;
+                int index = k * 2;
 
-                if(index > numbers.length) {
-                    index -= numbers.length;
+                while(true) {
+                    if(index < numbers.length) {
+                        index -= k;
+                        System.out.println("index : " + index);
+                        break;
+                    }
+
+                    if(index >= numbers.length) {
+                        int last = ((index / numbers.length) * numbers.length);
+
+                        index -= last;
+                        if(index - 2 < 0) {
+                            index = numbers.length + (index - 2);
+                        } else {
+                            index -= 2;
+                        }
+                        break;
+                    }
                 }
 
-                answer = numbers[index - 1];
+                answer = numbers[index];
 
                 return answer;
             }
