@@ -1789,5 +1789,19 @@ public class ProgrammersCodingTest_level_0 {
                 return answer;
             }
         }
+
+        class 프로그래머스_난이도0_소인수분해 {
+            class Solution {
+                public int[] solution(int n) {
+                    int[] answer = {};
+
+                    // n까지 for/stream 돌려서 나누는 경우 나머지가 없으면 밑과정ㄱㄱ
+                    // 1. set에 저장?
+                    // 2. stream으로 중복제거
+
+                    return answer;
+                }
+            }
+        }
     }
 }
