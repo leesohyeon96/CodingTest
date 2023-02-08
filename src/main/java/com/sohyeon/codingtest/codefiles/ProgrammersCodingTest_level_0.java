@@ -1795,9 +1795,24 @@ public class ProgrammersCodingTest_level_0 {
                 public int[] solution(int n) {
                     int[] answer = {};
 
-                    // n까지 for/stream 돌려서 나누는 경우 나머지가 없으면 밑과정ㄱㄱ
-                    // 1. set에 저장?
-                    // 2. stream으로 중복제거
+                    System.out.println("?" +  IntStream.rangeClosed(1, n)
+                            .filter(i -> n % i == 0)
+                            .count());
+
+                    int cnt = (int) IntStream.rangeClosed(1, n)
+                            .filter(i -> n % i == 0)
+                            .count();
+
+                    if(cnt > 2) {
+                        // 짝수면 2로 나누고 안나뉘면 홀수들(n까지의) 반복해서 나누고 그것들
+                        answer = IntStream.rangeClosed(1, n)
+                                .filter(i -> n % i == 0)
+                                .distinct()
+                                .toArray();
+                    } else {
+                        answer = new int[1];
+                        answer[0] = n;
+                    }
 
                     return answer;
                 }
