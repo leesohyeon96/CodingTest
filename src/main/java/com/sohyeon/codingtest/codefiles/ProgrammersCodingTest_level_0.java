@@ -2,10 +2,7 @@ package com.sohyeon.codingtest.codefiles;
 
 import org.springframework.util.StringUtils;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -1795,20 +1792,38 @@ public class ProgrammersCodingTest_level_0 {
                 public int[] solution(int n) {
                     int[] answer = {};
 
-                    System.out.println("?" +  IntStream.rangeClosed(1, n)
-                            .filter(i -> n % i == 0)
-                            .count());
-
                     int cnt = (int) IntStream.rangeClosed(1, n)
                             .filter(i -> n % i == 0)
                             .count();
+                    TreeSet<Integer> treeSet = new TreeSet<>();
+
 
                     if(cnt > 2) {
+                        int number = n;
                         // 짝수면 2로 나누고 안나뉘면 홀수들(n까지의) 반복해서 나누고 그것들
-                        answer = IntStream.rangeClosed(1, n)
-                                .filter(i -> n % i == 0)
-                                .distinct()
-                                .toArray();
+                        while(true) {
+
+                            if(number % 2 == 0) { //짝수
+                                //n = 12 , 2
+                                treeSet.add(2);
+                                number /= 2;
+                            }
+
+                            if(n % 2 == 1) { //홀수
+                                int num = IntStream.rangeClosed(1, number)
+                                        .filter(i -> n % i == 0)
+                                        .findFirst()
+                                        .getAsInt();
+                                treeSet.add(num);
+                                number /= num;
+                            }
+
+                            if(n == 1) break;
+                        }
+                        // answer = IntStream.rangeClosed(1, n)
+                        //         .filter(i -> n % i == 0)
+                        //         .distinct()
+                        //         .toArray();
                     } else {
                         answer = new int[1];
                         answer[0] = n;
