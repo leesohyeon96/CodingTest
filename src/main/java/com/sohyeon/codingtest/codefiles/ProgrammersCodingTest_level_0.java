@@ -1792,38 +1792,41 @@ public class ProgrammersCodingTest_level_0 {
                 public int[] solution(int n) {
                     int[] answer = {};
 
+                    int localnum = n;
+
                     int cnt = (int) IntStream.rangeClosed(1, n)
-                            .filter(i -> n % i == 0)
+                            .filter(i -> localnum % i == 0)
                             .count();
                     TreeSet<Integer> treeSet = new TreeSet<>();
 
 
                     if(cnt > 2) {
-                        int number = n;
-                        // 짝수면 2로 나누고 안나뉘면 홀수들(n까지의) 반복해서 나누고 그것들
                         while(true) {
-
-                            if(number % 2 == 0) { //짝수
-                                //n = 12 , 2
+                            if(n % 2 == 0) {
                                 treeSet.add(2);
-                                number /= 2;
+                                n /= 2;
                             }
 
-                            if(n % 2 == 1) { //홀수
-                                int num = IntStream.rangeClosed(1, number)
-                                        .filter(i -> n % i == 0)
-                                        .findFirst()
-                                        .getAsInt();
-                                treeSet.add(num);
-                                number /= num;
+                            if(n % 2 == 1) {
+                                for(int i = 1; i <= n; i++) {
+
+                                    if(n % i == 0) {
+                                        if(i == 1) {
+                                            continue;
+                                        }
+                                        treeSet.add(i);
+                                        n /= i;
+                                    }
+                                }
                             }
 
-                            if(n == 1) break;
+                            if(n == 1) {
+                                answer = treeSet.stream()
+                                        .mapToInt(Integer::intValue)
+                                        .toArray();
+                                break;
+                            }
                         }
-                        // answer = IntStream.rangeClosed(1, n)
-                        //         .filter(i -> n % i == 0)
-                        //         .distinct()
-                        //         .toArray();
                     } else {
                         answer = new int[1];
                         answer[0] = n;
