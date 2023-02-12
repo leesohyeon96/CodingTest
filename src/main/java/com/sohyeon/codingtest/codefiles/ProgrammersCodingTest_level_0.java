@@ -1835,6 +1835,18 @@ public class ProgrammersCodingTest_level_0 {
                     return answer;
                 }
             }
+            class 프로그래머스_난이도0_영어가싫어요 {
+                class Solution {
+                    public long solution(String numbers) {
+                        long answer = 0;
+
+                        // numbers[]용 String[] 만들고
+                        // contains로 있는 경우 replace 하도록 하기
+                        return answer;
+                    }
+                }
+
+            }
         }
     }
 }
