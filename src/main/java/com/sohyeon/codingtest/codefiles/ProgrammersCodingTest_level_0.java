@@ -1842,6 +1842,16 @@ public class ProgrammersCodingTest_level_0 {
 
                         // numbers[]용 String[] 만들고
                         // contains로 있는 경우 replace 하도록 하기
+                        String[] numArray = {"one", "two", "three", "four", "five", "six", "seven"
+                                , "eight", "nine"};
+                        int[] intArray = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+
+                        Arrays.stream(numArray)
+                                .filter(str -> numbers.contains(str));
+
+
+
+
                         return answer;
                     }
                 }
