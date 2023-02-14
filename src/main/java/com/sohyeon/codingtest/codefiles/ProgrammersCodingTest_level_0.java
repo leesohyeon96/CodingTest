@@ -3,6 +3,7 @@ package com.sohyeon.codingtest.codefiles;
 import org.springframework.util.StringUtils;
 
 import java.util.*;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -1838,21 +1839,32 @@ public class ProgrammersCodingTest_level_0 {
             class 프로그래머스_난이도0_영어가싫어요 {
                 class Solution {
                     public long solution(String numbers) {
-                        long answer = 0;
+                        String answer = "";
+                        long longAnswer = 0;
 
                         // numbers[]용 String[] 만들고
                         // contains로 있는 경우 replace 하도록 하기
-                        String[] numArray = {"one", "two", "three", "four", "five", "six", "seven"
+                        String[] numArray = { "one", "two", "three", "four", "zero", "five", "six", "seven"
                                 , "eight", "nine"};
-                        int[] intArray = {1, 2, 3, 4, 5, 6, 7, 8, 9};
-
-                        Arrays.stream(numArray)
-                                .filter(str -> numbers.contains(str));
+                        String[] intArray = {"1", "2", "3", "4", "0", "5", "6", "7", "8", "9"};
 
 
 
+                        Map<String, String> map = new HashMap();
+                        for(int i = 0; i < numArray.length; i++) {
+                            map.put(numArray[i], intArray[i]);
+                            System.out.println("key : " + numArray[i] + ", key : " + intArray[i]);
+                        }
 
-                        return answer;
+                        answer = Arrays.stream(numArray)
+                                .filter(str -> numbers.contains(str))
+                                .map(str -> map.get(str))
+                                .collect(Collectors.joining());
+                        // .forEach(System.out::println);
+
+                        longAnswer = Integer.valueOf(answer);
+
+                        return longAnswer;
                     }
                 }
 
