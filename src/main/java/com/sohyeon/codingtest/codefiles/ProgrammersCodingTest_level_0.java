@@ -1842,27 +1842,33 @@ public class ProgrammersCodingTest_level_0 {
                         String answer = "";
                         long longAnswer = 0;
 
-                        // numbers[]용 String[] 만들고
-                        // contains로 있는 경우 replace 하도록 하기
-                        String[] numArray = { "one", "two", "three", "four", "zero", "five", "six", "seven"
+                        String[] numArray = { "zero", "one", "two", "three", "four", "five", "six", "seven"
                                 , "eight", "nine"};
-                        String[] intArray = {"1", "2", "3", "4", "0", "5", "6", "7", "8", "9"};
+                        String[] intArray = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"};
 
+//         Map<String, String> map = new HashMap();
+//         for(int i = 0; i < numArray.length; i++) {
+//             map.put(numArray[i], intArray[i]);
+//         }
 
-
-                        Map<String, String> map = new HashMap();
                         for(int i = 0; i < numArray.length; i++) {
-                            map.put(numArray[i], intArray[i]);
-                            System.out.println("key : " + numArray[i] + ", key : " + intArray[i]);
+                            //System.out.println("가지고잇냐 : " + numbers.contains(numArray[i]));
+                            if(numbers.contains(numArray[i])) {
+                                System.out.println("numArray[i] : " + numArray[i]);
+                                System.out.println("intArray[i] : " + intArray[i]);
+                                numbers.replaceAll(numArray[i], intArray[i]);
+                                // numbers.replaceAll("zero", "어이가없네");
+                                System.out.println("numbers : " + numbers);
+                            }
                         }
 
-                        answer = Arrays.stream(numArray)
-                                .filter(str -> numbers.contains(str))
-                                .map(str -> map.get(str))
-                                .collect(Collectors.joining());
-                        // .forEach(System.out::println);
+//         Arrays.stream(numArray)
+//                 .filter(str -> numbers.contains(str)) // zero를 가지고 있으니 0이 바로 앞으로나오는거
+//                 .map(str -> map.get(str))
+//                 .forEach(System.out::println);
 
-                        longAnswer = Integer.valueOf(answer);
+
+                        //longAnswer = Integer.valueOf(numbers);
 
                         return longAnswer;
                     }
