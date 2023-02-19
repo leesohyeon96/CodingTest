@@ -1864,6 +1864,36 @@ public class ProgrammersCodingTest_level_0 {
                     }
                 }
 
+                class 프로그래머스_난이도0_잘라서배열로저장하기 {
+                    class Solution {
+                        public String[] solution(String my_str, int n) {
+                            String[] answer = {};
+                            List<String> list = new ArrayList<>();
+
+                            while(true) {
+                                // 1. n만큼 자르기 -> [0 - 5]
+                                if(my_str.length() > 0) {
+                                    String shortStr = my_str.substring(0, n);
+                                    list.add(shortStr);
+                                    my_str = my_str.replace(shortStr, "");
+                                    System.out.println("?" + my_str);
+
+                                } else {
+                                    break;
+                                }
+                            }
+
+                            // n만큼 잘라서 원본에 영향을 주게 한다음 Arraylist<String>에 저장
+                            // 아직 length가 있으면
+                            // 위의 행동 반복
+                            //
+
+                            return answer;
+                        }
+
+                    }
+                }
+
             }
         }
     }
