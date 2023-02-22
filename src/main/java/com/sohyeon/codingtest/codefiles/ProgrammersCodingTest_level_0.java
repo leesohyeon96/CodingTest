@@ -1865,7 +1865,39 @@ public class ProgrammersCodingTest_level_0 {
                 }
 
                 class 프로그래머스_난이도0_잘라서배열로저장하기 {
-
+//                     참고
+//                     Double cnt = (double) Math.ceil((double) my_str.length() / n) ;
+//                            String[] answer = new String[cnt.intValue()];
+//                            int j = 0;
+//
+//                            for(int i=0; i < cnt.intValue(); i++) {
+//                                if(my_str.length() % n == 0) {
+//                                    answer[i] = my_str.substring(j, j+n);
+//                                }else {
+//                                    if(i == cnt - 1) {
+//                                        answer[i] = my_str.substring(j);
+//                                    }else {
+//                                        answer[i] = my_str.substring(j, j+n);
+//                                    }
+//                                }
+//
+//                                j = j + n ;
+//                            }
+//                            return answer;
+//
+//                    참고
+//                    int resultCnt = (my_str.length() + n - 1) / n;
+//                            String[] answer = new String[resultCnt];
+//
+//                            for (int i = 0; i < resultCnt; i++) {
+//                                int start = n * i;
+//                                int end = start + n >= my_str.length()? my_str.length(): start + n;
+//                                answer[i] = my_str.substring(start, end);
+//                            }
+//
+//                            return answer;
+//
+//                     내가 작성한 코드
                     class Solution {
                         public String[] solution(String my_str, int n) {
                             String[] answer = {};
@@ -1891,6 +1923,7 @@ public class ProgrammersCodingTest_level_0 {
                                     break;
                                 }
                             }
+                            Arrays.stream(list.toArray()).forEach(System.out::println);
 
                             answer = list.toArray(new String[list.size()]);
 
