@@ -1931,6 +1931,32 @@ public class ProgrammersCodingTest_level_0 {
                         }
                     }
                 }
+                class 프로그래머스_난이도0_컨트롤제트 {
+                    class Solution {
+                        public int solution(String s) {
+                            int answer = 0;
+
+                            String[] strArray = s.split(" ");
+
+                            for(int i = 0; i < strArray.length; i++) {
+                                if(strArray[i].equals("Z")) {
+                                    answer -= Integer.parseInt(strArray[i -1]);
+                                    continue;
+                                }
+                                answer += Integer.parseInt(strArray[i]);
+                            }
+
+                            // Stream으로 풀어보자
+//                            Arrays.stream(s.split(" "))
+                            //i -> 숫자가 아니고
+                            //숫자가 아닌 것 앞에 있는 숫자는 filter()에서 빼버린뒤
+                            //sum();
+
+
+                            return answer;
+                        }
+                    }
+                }
 
             }
         }
