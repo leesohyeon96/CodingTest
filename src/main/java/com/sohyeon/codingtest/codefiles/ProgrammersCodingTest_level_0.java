@@ -1945,13 +1945,20 @@ public class ProgrammersCodingTest_level_0 {
                                 }
                                 answer += Integer.parseInt(strArray[i]);
                             }
+                            return answer;
+                        }
+                    }
+                }
 
-                            // Stream으로 풀어보자
-//                            Arrays.stream(s.split(" "))
-                            //i -> 숫자가 아니고
-                            //숫자가 아닌 것 앞에 있는 숫자는 filter()에서 빼버린뒤
-                            //sum();
+                class 프로그래머스_난이도0_문자열계산하기 {
+                    class Solution {
+                        public int solution(String my_string) {
+                            int answer = 0;
 
+                            // StringTokin로나눠서 "3" "+" "4" 한 뒤
+                            // "+" "-" 인 경우 +, - 하도록
+                            StringTokenizer st = new StringTokenizer(my_string);
+                            st.countTokens();
 
                             return answer;
                         }
