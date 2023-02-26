@@ -1955,11 +1955,20 @@ public class ProgrammersCodingTest_level_0 {
                         public int solution(String my_string) {
                             int answer = 0;
 
-                            // StringTokin로나눠서 "3" "+" "4" 한 뒤
-                            // "+" "-" 인 경우 +, - 하도록
-                            StringTokenizer st = new StringTokenizer(my_string);
-                            st.countTokens();
+                            // 첫번째 마지막에 ( ) 붙여버리면 int로 바꾸면 되지 않을까
+                            String[] strArray = my_string.split(" ");
+                            strArray[0] = "(" + strArray[0];
+                            strArray[strArray.length - 1] = strArray[strArray.length - 1] + ")";
 
+                            String remodelingString = Arrays.stream(strArray).collect(Collectors.joining());
+
+
+                            //my_string.replaceFirst(my_string, "(" + my_string);
+                            //my_string.replace("\"", ")");
+                            System.out.println(remodelingString);
+
+                            //answer = Integer.valueOf(my_string);
+                            answer = Integer.decode(remodelingString);
                             return answer;
                         }
                     }
