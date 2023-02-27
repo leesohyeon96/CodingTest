@@ -1955,22 +1955,28 @@ public class ProgrammersCodingTest_level_0 {
                         public int solution(String my_string) {
                             int answer = 0;
 
-                            // 첫번째 마지막에 ( ) 붙여버리면 int로 바꾸면 되지 않을까
                             String[] strArray = my_string.split(" ");
-                            strArray[0] = "(" + strArray[0];
-                            strArray[strArray.length - 1] = strArray[strArray.length - 1] + ")";
+                            for(int i = 0; i < strArray.length; i++) {
+                                if(strArray[i].equals("+")) {
+                                    answer = doPlus(strArray[i - 1], strArray[i + 1]);
+                                }
+                                if(strArray[i].equals("-")) {
+                                    answer = doMinus(strArray[i - 1], strArray[i + 1]);
+                                }
 
-                            String remodelingString = Arrays.stream(strArray).collect(Collectors.joining());
+                            }
 
-
-                            //my_string.replaceFirst(my_string, "(" + my_string);
-                            //my_string.replace("\"", ")");
-                            System.out.println(remodelingString);
-
-                            //answer = Integer.valueOf(my_string);
-                            answer = Integer.decode(remodelingString);
                             return answer;
                         }
+
+                        private int doPlus(String previousVal, String afterVal) {
+                            return Integer.valueOf(previousVal) + Integer.valueOf(afterVal);
+                        }
+
+                        private int doMinus(String previousVal, String afterVal) {
+                            return Integer.valueOf(previousVal) + Integer.valueOf(afterVal);
+                        }
+
                     }
                 }
 
