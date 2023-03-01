@@ -1957,25 +1957,21 @@ public class ProgrammersCodingTest_level_0 {
 
                             String[] strArray = my_string.split(" ");
                             for(int i = 0; i < strArray.length; i++) {
-                                if(strArray[i].equals("+")) {
-                                    answer = doPlus(strArray[i - 1], strArray[i + 1]);
+
+                                if(i == 0) {
+                                    answer = Integer.valueOf(strArray[i]);
                                 }
-                                if(strArray[i].equals("-")) {
-                                    answer = doMinus(strArray[i - 1], strArray[i + 1]);
+
+                                if(strArray[i].equals("+") || strArray[i].equals("-")) {
+                                    answer = (strArray[i].equals("+")) ? answer + Integer.parseInt(strArray[i + 1]) : answer - Integer.parseInt(strArray[i + 1]);
                                 }
+
 
                             }
 
                             return answer;
                         }
 
-                        private int doPlus(String previousVal, String afterVal) {
-                            return Integer.valueOf(previousVal) + Integer.valueOf(afterVal);
-                        }
-
-                        private int doMinus(String previousVal, String afterVal) {
-                            return Integer.valueOf(previousVal) + Integer.valueOf(afterVal);
-                        }
 
                     }
                 }
