@@ -1951,6 +1951,8 @@ public class ProgrammersCodingTest_level_0 {
                 }
 
                 class 프로그래머스_난이도0_문자열계산하기 {
+                    //참고
+                    //return Arrays.stream(myString.replaceAll("- ", "-").replaceAll("[+] ", "").trim().split(" ")).mapToInt(Integer::parseInt).sum();
                     class Solution {
                         public int solution(String my_string) {
                             int answer = 0;
@@ -1973,6 +1975,33 @@ public class ProgrammersCodingTest_level_0 {
                         }
 
 
+                    }
+                }
+
+                class 프로그래머스_난이도0_구슬을나누는경우의수 {
+                    class Solution {
+                        public int solution(int balls, int share) {
+                            int answer = 0;
+
+                            int[] iArray = new int[balls];
+                            // : {}
+                            // 머쓱이가 갖고 있는 구슬 개수 = balls
+                            // 친구들에게 나누어 줄 구슬 개수 = share
+
+                            // 경우의 수 문제
+                            //(balls - share)! x share! / balls;
+
+                            int cnt = 0; // 0,1
+                            while(cnt < share) { //0,1 < 2
+
+                                cnt++;
+                            }
+
+
+                            return answer;
+
+
+                        }
                     }
                 }
 
