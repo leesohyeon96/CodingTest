@@ -1984,18 +1984,27 @@ public class ProgrammersCodingTest_level_0 {
                             int answer = 0;
 
                             int[] iArray = new int[balls];
-                            // : {}
-                            // 머쓱이가 갖고 있는 구슬 개수 = balls
-                            // 친구들에게 나누어 줄 구슬 개수 = share
-
-                            // 경우의 수 문제
-                            //(balls - share)! x share! / balls;
-
-                            int cnt = 0; // 0,1
-                            while(cnt < share) { //0,1 < 2
-
-                                cnt++;
+                            for(int i = 0; i < balls; i++) {
+                                iArray[i] = i;
+                                System.out.println("iArray[i] : " + iArray[i]);
                             }
+
+                            int cnt = 0;
+
+                            int idx = 0;
+
+
+                            for(int i = 0; i < iArray.length; i++) {
+                                while(cnt < share) { // 0,1 < 2
+                                    idx++;
+                                    for(int j = idx; i < iArray.length; i++) {
+
+                                    }
+                                }
+
+                            }
+
+
 
 
                             return answer;
