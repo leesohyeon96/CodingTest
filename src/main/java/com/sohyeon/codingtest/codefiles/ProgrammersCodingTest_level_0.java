@@ -1980,36 +1980,16 @@ public class ProgrammersCodingTest_level_0 {
 
                 class 프로그래머스_난이도0_구슬을나누는경우의수 {
                     class Solution {
-                        public int solution(int balls, int share) {
-                            int answer = 0;
+                        public long solution(int balls, int share) {
+                            long answer = 1L;
+                            int cnt = 1;
 
-                            int[] iArray = new int[balls];
-                            for(int i = 0; i < balls; i++) {
-                                iArray[i] = i;
-                                System.out.println("iArray[i] : " + iArray[i]);
+                            while(cnt <= share) {
+                                answer *= balls--;
+                                answer /= cnt++;
                             }
-
-                            int cnt = 0;
-
-                            int idx = 0;
-
-
-                            for(int i = 0; i < iArray.length; i++) {
-                                while(cnt < share) { // 0,1 < 2
-                                    idx++;
-                                    for(int j = idx; i < iArray.length; i++) {
-
-                                    }
-                                }
-
-                            }
-
-
-
 
                             return answer;
-
-
                         }
                     }
                 }
