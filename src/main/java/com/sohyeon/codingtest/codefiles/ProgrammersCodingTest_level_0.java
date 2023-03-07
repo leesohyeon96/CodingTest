@@ -1994,6 +1994,20 @@ public class ProgrammersCodingTest_level_0 {
                     }
                 }
 
+                class 프로그래머스_난이도0_삼각형의완성조건2 {
+                    class Solution {
+                        public int solution(int[] sides) {
+                            int answer = 0;
+
+                            sides = Arrays.stream(sides).sorted().toArray();
+
+                            int longSide = (int) IntStream.rangeClosed((sides[1] - sides[0] + 1), sides[1]).count();
+                            int notLongSide = (int)IntStream.range((sides[1] + 1), (sides[0] + sides[1])).count();
+                            return longSide + notLongSide;
+                        }
+                    }
+                }
+
             }
         }
     }
