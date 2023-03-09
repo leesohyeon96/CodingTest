@@ -2008,6 +2008,21 @@ public class ProgrammersCodingTest_level_0 {
                     }
                 }
 
+                class 프로그래머스_난이도0_외계어사전 {
+                    class Solution {
+                        public int solution(String[] spell, String[] dic) {
+                            int answer = 0;
+
+                            // dic 배열 하나하나에 붙인다음 stream으로 distinct해서 -> length가 원래 길이면 조합해 만들 수 있는 단어니까 1 반환하도록
+
+                            // 존재하면 1
+                            // 존재하지 않으면 2
+
+                            return answer;
+                        }
+                    }
+                }
+
             }
         }
     }
