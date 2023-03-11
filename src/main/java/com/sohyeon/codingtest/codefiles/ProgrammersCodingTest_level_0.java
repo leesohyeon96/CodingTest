@@ -2013,10 +2013,12 @@ public class ProgrammersCodingTest_level_0 {
                         public int solution(String[] spell, String[] dic) {
                             int answer = 0;
 
-                            // dic 배열 하나하나에 붙인다음 stream으로 distinct해서 -> length가 원래 길이면 조합해 만들 수 있는 단어니까 1 반환하도록
+                            String spellStr = String.join("", spell); // pos, zdx, somd
+                            int[] originLength = {};
 
-                            // 존재하면 1
-                            // 존재하지 않으면 2
+                            // ong answer2 = Arrays.stream(dic).map(i -> i + spellStr);
+
+                            int[] afterLength = {};
 
                             return answer;
                         }
