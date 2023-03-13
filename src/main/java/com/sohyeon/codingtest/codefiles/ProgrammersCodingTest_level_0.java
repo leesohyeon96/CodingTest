@@ -2012,30 +2012,29 @@ public class ProgrammersCodingTest_level_0 {
 
                     class Solution {
                         public int solution(String[] spell, String[] dic) {
-                            int answer = 0;
+                            int answer = 2;
 
-                            String spellStr = String.join("", spell); // pos, zdx, somd
-                            int[] originLength = new int[dic.length];
-                            int[] afterLength = new int[dic.length];
+                            String spellStr = String.join("", spell);
+                            String[] originLength = new String[dic.length];
+                            String[] afterLength = new String[dic.length];
+
+                            StringBuilder sb = new StringBuilder();
 
                             for(int i = 0; i < dic.length; i++) {
-                                // 1. 현재의 length 저장하기
-                                originLength[i] = dic[i].length();
+                                originLength[i] = dic[i];
+                                sb.setLength(0);
 
-                                // 2. 각각에 spellStr 붙인 뒤 distinct 하기
-                                dic = Arrays.stream(dic).map(str -> str + String.join("", spell))
-                                        .distinct().toArray(String[]::new);
+                                dic[i] = sb.append(dic[i]).append(spellStr).toString();
+                                dic[i] = Arrays.stream(dic[i].split("")).distinct().collect(Collectors.joining());
 
-                                System.out.println(dic[i]);
+                                afterLength[i] = dic[i];
 
-                                // 3. 2번 실행 후 length 저장하고 1번의 length와 똑같은게 존재한다면 1 반환
-                                afterLength[i] = dic[i].length();
+                                if(originLength[i].length() == afterLength[i].length()
+                                        && originLength[i].equals(afterLength[i])) {
+                                    answer = 1;
+                                    break;
+                                }
                             }
-
-
-
-
-                            // long answer2 = Arrays.stream(dic).map(i -> i + spellStr);
 
                             return answer;
                         }
