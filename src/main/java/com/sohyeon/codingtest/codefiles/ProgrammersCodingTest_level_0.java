@@ -2040,7 +2040,55 @@ public class ProgrammersCodingTest_level_0 {
                         }
                     }
                 }
+                class 프로그래머스_난이도0_캐릭터의좌표 {
+                    class Solution {
+                        public int[] solution(String[] keyinput, int[] board) {
+                            int[] answer = new int[2];
 
+                            int xNm = 0;
+                            int yNm = 0;
+
+                            for (int i = 0; i < keyinput.length; i++) {
+                                String str = keyinput[i];
+                                if ("left".equals(str)) {
+                                    xNm--;
+                                } else if ("right".equals(str)) {
+                                    xNm++;
+                                } else if ("up".equals(str)) {
+                                    yNm++;
+                                } else {
+                                    yNm--;
+                                }
+                            }
+
+                            answer[0] = xNm;
+                            answer[1] = yNm;
+
+                            if (Math.abs(answer[0]) > ((board[0] - 1) / 2)) {
+                                int boardIntForX = board[0] - 1;
+
+                                if (answer[0] > 0) {
+                                    answer[0] = boardIntForX / 2;
+                                } else {
+                                    answer[0] = -(boardIntForX / 2);
+                                }
+                            }
+
+                            if (Math.abs(answer[1]) > ((board[1] - 1) / 2)) {
+                                int boardIntForY = board[1] - 1;
+
+                                if (answer[1] > 0) {
+                                    answer[1] = boardIntForY / 2;
+                                } else {
+                                    answer[1] = -(boardIntForY / 2);
+                                }
+                            }
+
+
+                            return answer;
+                        }
+                    }
+                }
             }
         }
     }
