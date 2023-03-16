@@ -2048,44 +2048,57 @@ public class ProgrammersCodingTest_level_0 {
                             int xNm = 0;
                             int yNm = 0;
 
-                            for (int i = 0; i < keyinput.length; i++) {
+                            for(int i = 0; i < keyinput.length; i++) {
                                 String str = keyinput[i];
-                                if ("left".equals(str)) {
+                                if("left".equals(str)) {
                                     xNm--;
-                                } else if ("right".equals(str)) {
+                                    xNm = limitXBoard(xNm, board);
+                                } else if("right".equals(str)) {
                                     xNm++;
-                                } else if ("up".equals(str)) {
+                                    xNm = limitXBoard(xNm, board);
+                                } else if("up".equals(str)) {
                                     yNm++;
+                                    yNm = limitYBoard(yNm, board);
                                 } else {
                                     yNm--;
+                                    yNm = limitYBoard(yNm, board);
                                 }
                             }
 
                             answer[0] = xNm;
                             answer[1] = yNm;
 
-                            if (Math.abs(answer[0]) > ((board[0] - 1) / 2)) {
+                            return answer;
+                        }
+
+                        public int limitXBoard(int x, int[] board) {
+                            // x
+                            if (Math.abs(x) > ((board[0] - 1) / 2)) {
                                 int boardIntForX = board[0] - 1;
 
-                                if (answer[0] > 0) {
-                                    answer[0] = boardIntForX / 2;
+                                if (x > 0) {
+                                    x = boardIntForX / 2;
                                 } else {
-                                    answer[0] = -(boardIntForX / 2);
+                                    x = -(boardIntForX / 2);
                                 }
                             }
 
-                            if (Math.abs(answer[1]) > ((board[1] - 1) / 2)) {
+                            return x;
+                        }
+
+                        public int limitYBoard(int y, int[] board) {
+                            // y
+                            if(Math.abs(y) > ((board[1] - 1) / 2)) {
                                 int boardIntForY = board[1] - 1;
 
-                                if (answer[1] > 0) {
-                                    answer[1] = boardIntForY / 2;
+                                if(y > 0) {
+                                    y = boardIntForY / 2;
                                 } else {
-                                    answer[1] = -(boardIntForY / 2);
+                                    y = -(boardIntForY / 2);
                                 }
+
                             }
-
-
-                            return answer;
+                            return y;
                         }
                     }
                 }
