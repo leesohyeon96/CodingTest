@@ -2041,6 +2041,15 @@ public class ProgrammersCodingTest_level_0 {
                     }
                 }
                 class 프로그래머스_난이도0_캐릭터의좌표 {
+                    // 참고
+                    // 오.. int[] now = {0, 0};
+                    //        for (int i = 0; i < keyinput.length; i++){
+                    //            if(keyinput[i].equals("left")) now[0] -= now[0]>-(board[0]/2)?1:0;
+                    //            else if(keyinput[i].equals("right")) now[0] += now[0]<(board[0]/2)?1:0;
+                    //            else if(keyinput[i].equals("down")) now[1] -= now[1]>-(board[1]/2)?1:0;
+                    //            else if(keyinput[i].equals("up")) now[1] += now[1]<(board[1]/2)?1:0;
+                    //            }
+                    //        return now;
                     class Solution {
                         public int[] solution(String[] keyinput, int[] board) {
                             int[] answer = new int[2];
@@ -2099,6 +2108,23 @@ public class ProgrammersCodingTest_level_0 {
 
                             }
                             return y;
+                        }
+                    }
+                }
+
+                class 프로그래머스_난이도0_종이자르기 {
+                    class Solution {
+                        public int solution(int M, int N) {
+                            int answer = 0;
+
+                            // 2,2 - 3
+                            // 2,5 - 9
+                            // 1,1 - 0
+                            // 1,1로 만들 때
+                            // 세로는 (가로 길이 - 1)만
+                            // 가로는 (세로길이)
+
+                            return answer;
                         }
                     }
                 }
