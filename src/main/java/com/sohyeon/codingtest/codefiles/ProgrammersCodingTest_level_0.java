@@ -2115,14 +2115,7 @@ public class ProgrammersCodingTest_level_0 {
                 class 프로그래머스_난이도0_종이자르기 {
                     class Solution {
                         public int solution(int M, int N) {
-                            int answer = 0;
-
-                            // 2,2 - 3
-                            // 2,5 - 9
-                            // 1,1 - 0
-                            // 1,1로 만들 때
-                            // 세로는 (가로 길이 - 1)만
-                            // 가로는 (세로길이)
+                            int answer = (M - 1) + ((N - 1) * M);
 
                             return answer;
                         }
