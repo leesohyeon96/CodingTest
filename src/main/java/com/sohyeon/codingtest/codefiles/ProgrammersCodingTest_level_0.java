@@ -2121,6 +2121,30 @@ public class ProgrammersCodingTest_level_0 {
                         }
                     }
                 }
+
+                class 프로그래머스_난이도0_직사각형넓이구하기 {
+                    class Solution {
+                        public int solution(int[][] dots) {
+                            int answer = 0;
+
+                            // 직사각형 넓이 구하는 공식 = 가로 * 세로
+                            // 가장 큰 x - 가장 작은 x
+                            // 가장 큰 y - 가장 작은 y
+                            // 위에 둘이 곱하기
+                            int topXNum = 0;
+                            int bottomXNUm = 0;
+
+                            Arrays.stream(dots)
+                                    .flatMapToInt(n -> Arrays.stream(n))
+                                    .filter(o -> o >= 4)
+                                    .forEach(System.out::println);
+
+
+
+                            return answer;
+                        }
+                    }
+                }
             }
         }
     }
