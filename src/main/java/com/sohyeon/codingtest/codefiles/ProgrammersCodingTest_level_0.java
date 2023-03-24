@@ -2131,14 +2131,28 @@ public class ProgrammersCodingTest_level_0 {
                             // 가장 큰 x - 가장 작은 x
                             // 가장 큰 y - 가장 작은 y
                             // 위에 둘이 곱하기
-                            int topXNum = 0;
-                            int bottomXNUm = 0;
+                            final int[] topXNum = {0};
+                            final int[] bottomXNum = {0};
+                            final int[] idx = {1};
 
+
+                            // 인덱스가 홀수면 x축
+                            // 인덱스가 짝수면 y축
                             Arrays.stream(dots)
-                                    .flatMapToInt(n -> Arrays.stream(n))
-                                    .filter(o -> o >= 4)
-                                    .forEach(System.out::println);
+                                    .flatMapToInt(Arrays::stream)
+                                    .filter(i -> idx[0] % 2 == 0)
+                                    .forEach(i -> {
+                                        if(idx[0] % 2 == 0 && idx[0] < i) { // x축
+                                            topXNum[0] = i;
+                                        } else { // y축
+                                            bottomXNum[0] = i;
+                                        }
 
+                                        // System.out.println("i : " + i);
+                                        idx[0]++;
+                                    });
+
+                            System.out.println("top : " + topXNum[0]);
 
 
                             return answer;
