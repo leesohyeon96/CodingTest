@@ -2123,32 +2123,49 @@ public class ProgrammersCodingTest_level_0 {
                 }
 
                 class 프로그래머스_난이도0_직사각형넓이구하기 {
+                    // 참고
+                    //        int answer = 0;
+                    //        int tmp = dots[0][0];
+                    //        int tmp2 = 0;
+                    //        int tmp3 = 0;
+                    //        for(int i = 1; i<dots.length; i++){
+                    //            if(dots[i][0] == tmp){
+                    //                tmp2 = Math.abs(dots[i][1] - dots[0][1]);
+                    //            }else{
+                    //                tmp3 = Math.abs(dots[i][0] - dots[0][0]);
+                    //            }
+                    //        }
+                    //        answer = tmp2 * tmp3;
+                    //        return answer;
                     class Solution {
                         public int solution(int[][] dots) {
                             int answer = 0;
-
-                            // 직사각형 넓이 구하는 공식 = 가로 * 세로
-                            // 가장 큰 x - 가장 작은 x
-                            // 가장 큰 y - 가장 작은 y
-                            // 위에 둘이 곱하기
-                            int x = 0;
-                            int y = 0;
+                            int topX = dots[0][0];
+                            int topY = dots[0][1];
+                            int bottomX = dots[0][0];
+                            int bottomY = dots[0][1];
 
                             for(int i = 0; i < dots.length; i++) {
                                 for(int j = 0; j < dots[i].length; j++) {
-                                    // 0 -> x
-                                    // 1 -> y
-                                    if(dots[i][0] > x) {
-                                        x = dots[i][0];
+                                    if(dots[i][0] > topX) {
+                                        topX = dots[i][0];
                                     }
-                                    if(dots[i][1] > y) {
-                                        y = dots[i][1];
+
+                                    if(dots[i][0] <= bottomX) {
+                                        bottomX = dots[i][0];
+                                    }
+
+                                    if(dots[i][1] > topY) {
+                                        topY = dots[i][1];
+                                    }
+
+                                    if(dots[i][1] <= bottomY) {
+                                        bottomY = dots[i][1];
                                     }
                                 }
                             }
 
-                            answer = x * y;
-
+                            answer = Math.abs(topX - bottomX) * Math.abs(topY - bottomY);
 
                             return answer;
                         }
