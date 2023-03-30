@@ -1,10 +1,6 @@
 package com.sohyeon.codingtest.codefiles;
 
-import org.springframework.util.StringUtils;
-
 import java.util.*;
-import java.util.concurrent.atomic.AtomicInteger;
-import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -2167,6 +2163,7 @@ public class ProgrammersCodingTest_level_0 {
 
                             answer = Math.abs(topX - bottomX) * Math.abs(topY - bottomY);
 
+                            // test 용 커밋
                             return answer;
                         }
                     }
