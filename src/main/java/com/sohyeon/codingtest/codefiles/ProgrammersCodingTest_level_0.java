@@ -2168,6 +2168,34 @@ public class ProgrammersCodingTest_level_0 {
                         }
                     }
                 }
+
+                class 프로그래머스_난이도0_로그인성공 {
+                    class Solution {
+                        public String solution(String[] id_pw, String[][] db) {
+                            String answer = "";
+                            String id = id_pw[0];
+                            String pwd = id_pw[1];
+
+                            long idCnt = Arrays.stream(db)
+                                    .flatMap(arrays -> Arrays.stream(arrays))
+                                    .filter(data -> id.equals(data))
+                                    .count();
+                            boolean idRight = (idCnt > 0)? true: false;
+
+                            long pwdCnt = Arrays.stream(db)
+                                    .flatMap(arrays -> Arrays.stream(arrays))
+                                    .filter(data -> pwd.equals(data))
+                                    .count();
+                            boolean pwdRight = (pwdCnt > 0)? true: false;
+
+                            answer = (idRight == true && pwdRight == true)?
+                                    "login": (idRight == true && pwdRight == false)?
+                                    "wrong pw" : "fail";
+
+                            return answer;
+                        }
+                    }
+                }
             }
         }
     }
