@@ -2170,27 +2170,44 @@ public class ProgrammersCodingTest_level_0 {
                 }
 
                 class 프로그래머스_난이도0_로그인성공 {
+                    // 참고
+                    // public String solution(String[] idPw, String[][] db) {
+                    //        return getDb(db).get(idPw[0]) != null ? getDb(db).get(idPw[0]).equals(idPw[1]) ? "login" : "wrong pw" : "fail";
+                    //    }
+                    //
+                    //    private Map<String, String> getDb(String[][] db) {
+                    //        Map<String, String> map = new HashMap<>();
+                    //
+                    //        for (String[] array : db) {
+                    //            map.put(array[0], array[1]);
+                    //        }
+                    //        return map;
                     class Solution {
                         public String solution(String[] id_pw, String[][] db) {
                             String answer = "";
                             String id = id_pw[0];
                             String pwd = id_pw[1];
+                            boolean IDandPwd = false;
+                            boolean ID = false;
 
-                            long idCnt = Arrays.stream(db)
-                                    .flatMap(arrays -> Arrays.stream(arrays))
-                                    .filter(data -> id.equals(data))
-                                    .count();
-                            boolean idRight = (idCnt > 0)? true: false;
+                            for(int i = 0; i < db.length; i++) {
+                                if(db[i][0].equals(id)) {
+                                    ID = true;
+                                    if(db[i][1].equals(pwd)) {
+                                        IDandPwd = true;
+                                    }
+                                }
+                            }
 
-                            long pwdCnt = Arrays.stream(db)
-                                    .flatMap(arrays -> Arrays.stream(arrays))
-                                    .filter(data -> pwd.equals(data))
-                                    .count();
-                            boolean pwdRight = (pwdCnt > 0)? true: false;
 
-                            answer = (idRight == true && pwdRight == true)?
-                                    "login": (idRight == true && pwdRight == false)?
-                                    "wrong pw" : "fail";
+                            if(IDandPwd) {
+                                answer = "login";
+                            } else if(ID) {
+                                answer = "wrong pw";
+                            } else {
+                                answer = "fail";
+                            }
+
 
                             return answer;
                         }
