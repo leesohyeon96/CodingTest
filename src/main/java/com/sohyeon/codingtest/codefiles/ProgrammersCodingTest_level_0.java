@@ -2213,6 +2213,21 @@ public class ProgrammersCodingTest_level_0 {
                         }
                     }
                 }
+
+                class 프로그래머스_난이도0_치킨쿠폰 {
+                    class Solution {
+                        public int solution(int chicken) {
+                            int answer = -1;
+
+                            // 나누기 10 나머지 += 쿠폰 개수 , 몫을 서비스치킨으로 +
+                            // 그 몫을 다시 나누기 10 나머지 += 쿠폰 개수 , 몫을 서비스치킨으로 +
+                            // 몫(서비스치킨)이 1미만이면 쿠폰 그대로
+                            //
+
+                            return answer;
+                        }
+                    }
+                }
             }
         }
     }
