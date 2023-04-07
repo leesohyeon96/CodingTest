@@ -2218,26 +2218,11 @@ public class ProgrammersCodingTest_level_0 {
                     class Solution {
                         public int solution(int chicken) {
                             int answer = -1;
-                            // 나누기 10 나머지 += 쿠폰 개수 , 몫을 서비스치킨으로 +
-                            // 그 몫을 다시 나누기 10 나머지 += 쿠폰 개수 , 몫을 서비스치킨으로 +
-                            // 몫(서비스치킨)이 1미만이면 쿠폰 그대로
 
-                            int coupon = 0;
-                            int serviceCk = 0;
-                            int serviceCkCnt = 0;
-
-                            // chicken = 1,081
-                            coupon = chicken % 10; // 1
-                            serviceCk = chicken / 10; // 108
-                            serviceCkCnt += chicken / 10; // 108
-
-                            while(serviceCk >= 10) { // 108
-                                coupon += serviceCk % 10; // 9
-                                serviceCk = chicken / 10; //
-                                serviceCkCnt += chicken / 10;
-                            }
-
-
+                            // chicken = 100
+                            // coupon = chicken / 10
+                            // serviceChicken = coupon
+                            // coupon = serviceChicken / 10
 
                             return answer;
                         }
