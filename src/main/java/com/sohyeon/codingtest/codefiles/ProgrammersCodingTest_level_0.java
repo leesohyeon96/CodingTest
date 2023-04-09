@@ -2215,14 +2215,28 @@ public class ProgrammersCodingTest_level_0 {
                 }
 
                 class 프로그래머스_난이도0_치킨쿠폰 {
+                    // 참고
+                    //int answer = chicken/9;
+                    //        if(chicken>1&&chicken%9==0){
+                    //            answer--;
+                    //        }
+                    //
+                    //
+                    //        return answer;
                     class Solution {
                         public int solution(int chicken) {
-                            int answer = -1;
+                            int answer = 0;
+                            int coupon = chicken;
 
-                            // chicken = 100
-                            // coupon = chicken / 10
-                            // serviceChicken = coupon
-                            // coupon = serviceChicken / 10
+                            while(true) {
+                                if(coupon >= 10) {
+                                    int eaten = coupon / 10;
+                                    answer += eaten;
+                                    coupon = (coupon % 10) + eaten;
+                                } else {
+                                    break;
+                                }
+                            }
 
                             return answer;
                         }
