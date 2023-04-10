@@ -2242,6 +2242,31 @@ public class ProgrammersCodingTest_level_0 {
                         }
                     }
                 }
+
+                class 프로그래머스_난이도0_유한소수판별하기 {
+                    class Solution {
+                        public int solution(int a, int b) {
+                            int answer = 0;
+                            int tmp,n;
+
+                            // 유클리드 알고리즘 ㄱㄱ
+                            // 유한소수 = 1 무한소수 = 2
+                            if(b < a) {
+                                tmp = b;
+                                b = a;
+                                a = tmp;
+                            }
+
+                            while(a!=0) {
+                                n = b%a;
+                                b = a;
+                                a = n;
+                            }
+
+                            return b;
+                        }
+                    }
+                }
             }
         }
     }
