@@ -2247,23 +2247,20 @@ public class ProgrammersCodingTest_level_0 {
                     class Solution {
                         public int solution(int a, int b) {
                             int answer = 0;
-                            int tmp,n;
 
-                            // 유클리드 알고리즘 ㄱㄱ
-                            // 유한소수 = 1 무한소수 = 2
-                            if(b < a) {
-                                tmp = b;
-                                b = a;
-                                a = tmp;
+                            if((b / gcd(a,b)) % 2 == 0 || (b / gcd(a,b)) % 5 == 0) {
+                                answer = 1;
+                            } else {
+                                answer = 2;
                             }
 
-                            while(a!=0) {
-                                n = b%a;
-                                b = a;
-                                a = n;
-                            }
+                            return answer;
+                        }
 
-                            return b;
+                        public static int gcd(int a, int b) {
+                            if(b == 0) return a;
+
+                            return gcd(b, a % b);
                         }
                     }
                 }
