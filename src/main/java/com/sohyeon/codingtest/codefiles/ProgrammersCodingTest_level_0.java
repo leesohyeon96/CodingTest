@@ -2247,17 +2247,50 @@ public class ProgrammersCodingTest_level_0 {
                     class Solution {
                         public int solution(int a, int b) {
                             int answer = 0;
+                            // a 가 b 보다 작다는 조건도!추가!
 
-                            if((b / gcd(a,b)) % 2 == 0 || (b / gcd(a,b)) % 5 == 0) {
-                                answer = 1;
-                            } else {
-                                answer = 2;
+                            int gongyak = b / gcd(a, b);
+
+                            System.out.println("gongYak : " + gongyak);
+                            for(int i = 1; i * i <= gongyak; i++) {
+                                // 1이랑 맨끝 뺴고
+                                if(i * i == gongyak) {
+                                    System.out.println("i : " + i);
+                                    if(i != 1 ||i != 2 || i != 5 || i != gongyak) {
+                                        System.out.println("i 2,5 아님 : " + i);
+                                        answer = 2;
+                                        break;
+                                    } else {
+                                        answer = 1;
+                                    }
+                                } else if(gongyak % i == 0) {
+                                    System.out.println("%i : " + i);
+                                    // i 가 1이면 안들어와야되는데 왜 들어오는 거야 ㅋㅋ
+                                    if(i != 1 ||i != 2 || i != 5 || i != gongyak) {
+                                        System.out.println("%i 2,5 아님 : " + i);
+                                        answer = 2;
+                                        break;
+                                    } else {
+                                        answer = 1;
+                                    }
+                                }
                             }
+
+
+                            // b / gcd(a, b) -> 한다음 이 숫자의 공약수들을 구해서 2,5만 존재하면 1을 return 하도록!
+                            // if((b / gcd(a,b)) % 2 == 0 || (b / gcd(a,b)) % 5 == 0) {
+                            //     System.out.println("?? " + gcd(a,b));
+                            //     answer = 1;
+                            // } else {
+                            //     System.out.println("?? " + gcd(a,b));
+                            //     answer = 2;
+                            // }
 
                             return answer;
                         }
 
-                        public static int gcd(int a, int b) {
+                        // 최대공약수를 리턴하는 메소드(12와 21의)
+                        public int gcd(int a, int b) {
                             if(b == 0) return a;
 
                             return gcd(b, a % b);
