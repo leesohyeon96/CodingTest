@@ -2256,6 +2256,28 @@ public class ProgrammersCodingTest_level_0 {
                         }
                     }
                 }
+
+                class 프로그래머스_난이도0_등수매기기 {
+                    class Solution {
+                        public int[] solution(int[][] score) {
+                            int[] answer = {};
+
+                            // flatMap?으로 해서 두 값 더한 것
+                            // 1차배열로 반환
+
+                            // 바로 비교해서 1,2,3,4 하던지
+                            // 따로 돌려서 stream으로 하던지?
+                            Arrays.stream(score)
+                                    // { {1,2}, {3,4} }
+                                    // flatMaptoInt한다음 2개 더하면
+                                    .flatMapToInt(s -> Arrays.stream(s))
+                                    .map(i -> i+i)
+                                    .toArray();
+
+                            return answer;
+                        }
+                    }
+                }
             }
         }
     }
